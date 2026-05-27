@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: .\thuthesis-example.aux
+The top-level auxiliary file: thuthesis-example.aux
 The style file: thuthesis-bachelor.bst
 A level-1 auxiliary file: bu.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -18,7 +18,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref/refs.bib
 You've used 55 entries,
             5428 wiz_defined-function locations,
-            1415 strings with 16938 characters,
+            1415 strings with 16934 characters,
 and the built_in function-call counts, 334316 in all, are:
 = -- 7269
 > -- 37060

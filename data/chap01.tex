@@ -17,6 +17,30 @@
 
 目前，大部分商业无人机生产者为解决续航问题，提出的解决方案主要为调整电池与自重的比重，或是采用功率密度更高的电池，部分特殊场景下也会采用连接线缆直接供电的方案（如消防无人机）\cite{mohsan2022towards}。这些方案对提升续航能力的效果有限，或是极大的减小了无人机的灵活程度。
 
+本文调研了目前部分市面在售主流产品（如深圳市大疆创新科技有限公司的部分在售商品等），总结如表\ref{tab:drone_comparison}所示。
+
+\begin{table}[htbp]
+\centering
+\caption{典型消费级与轻量级无人机参数对比}
+\label{tab:drone_comparison}
+\begin{tabular}{lcc}
+\toprule
+无人机型号 & 续航时间（min） & 自重（g） \\
+\midrule
+DJI Mini 5 Pro   & 52 & 250 \\
+DJI Mini 4 Pro   & 45 & 248 \\
+DJI Mavic 3 Pro  & 43 & 958 \\
+DJI Mavic 3      & 46 & 895 \\
+DJI Mini 4       & 34 & 249 \\
+DJI Air 3S       & 45 & 724 \\
+DJI Neo          & 18 & 135 \\
+Crazyflie 2.1    & 7  & 27 \\
+Autel EVO Lite   & 40 & 866 \\
+Parrot ANAFI     & 25 & 320 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 因此，围绕柔性附着结构与无人机系统的协同设计，开展微型无人机的自主栖息与脱附控制研究，对于提升无人机续航能力、增强系统安全性并拓展其应用场景具有重要的工程意义和研究价值。
 
 \section{国内外研究现状}
@@ -27,7 +51,7 @@
 \subsubsection{现有栖息结构设计}
 部分研究团队利用刚性机械结构，设计了具有夹持与抓握功能的仿生夹爪，为无人机实现静态栖息提供了可行路径。例如，Hang 等人设计了一种多功能折叠夹具，该夹具在常态下充当无人机的起落架，而在折叠后可作为夹爪使用，使无人机能够稳定栖附于台体边缘或直立杆件上\cite{hang2019perching}；Kirchgeorg 等人则提出一种外包络式结构，通过其特殊的几何形态使无人机能够嵌卡在错综复杂的树枝之间，实现被动式的固定\cite{kirchgeorg2021hedgehog}；Roderick 等人受生物启发，开发了一种仿鸟类爪部的抓握机构，依靠对细长杆件的包络与摩擦力实现无人机的稳固栖息\cite{roderick2021bird}。
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width = 0.9\textwidth]{grab.png}
 \caption{部分基于抓握的栖息无人机设计，(a)\cite{hang2019perching}, (b)\cite{kirchgeorg2021hedgehog}, (c)\cite{roderick2021bird}}
@@ -37,7 +61,7 @@
 
 此外，另一类研究则基于不同的黏附机理实现无人机栖息。Park 等人利用电黏附效应，通过高压静电场使无人机能够附着于光滑墙体等表面，实现了无需系留的“贴附”栖息\cite{park2020lightweight}；Zhang 等人设计了一款具有钩爪结构的顶端机构，使其能够钩挂于建筑物缝隙或粗糙表面下方，实现倒挂式悬停\cite{zhang2017spidermav}；Jim Ang 团队则采用真空吸盘作为吸附装置，利用大气压差产生强吸附力，使无人机可负载自重数倍的外部载荷并稳定吸附于平整表面\cite{ang2022drone}。
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width = 0.9\textwidth]{sticker.png}
 \caption{部分基于黏附的栖息无人机设计，(a)\cite{park2020lightweight}, (b)\cite{zhang2017spidermav}, (c)\cite{ang2022drone}}
