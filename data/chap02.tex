@@ -1,0 +1,76 @@
+% !TeX root = ../thuthesis-example.tex
+\chapter{无人机及栖息装置系统搭建}
+
+\section{无人机系统搭建}
+
+\subsection{无人机机械结构设计}
+
+在无人机本体设计与平台构建方面，本文遵循轻量化与高结构刚度协同优化的设计原则。核心机架采用厚度为\SI{1.5}{mm}的碳纤维板材经精密机加工而成，该材料具有极高的比强度和比模量。最终制成的机架自重仅\SI{8.3}{g}，在实现极致轻量化的同时，确保了优异的整体力学性能与长期尺寸稳定性。实验验证表明，在电机持续运行5分钟的热负荷工况下，机架中心区域未出现肉眼可辨的热致变形；在电机全功率输出的最大推力状态下，机架整体也未观察到明显的弯曲或失稳现象，充分验证了该承力结构在高动态、高负载飞行条件下的可靠性与鲁棒性。
+
+\begin{figure}[H]
+    \centering
+
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{flat-stress.PNG}
+        \caption{平板情况}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ori-stress.PNG}
+        \caption{常用机架设计}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{new-stress.PNG}
+        \caption{轻量化设计}
+    \end{subfigure}
+
+    \caption{三种无人机基座设计应力图}
+    \label{fig:base_design}
+\end{figure}
+
+将无人机底座设计进行仿真计算，分为三种情况：全平板，即无任何镂空、减重设计（下文简称“平板情况”）；常用机架设计，即目前商用在售类型（下文简称“常用情况”）；减重设计，镂空绝大部分，留下必要结构设计（下文简称“轻量情况”）。根据仿真计算结果，无人机满推力运行时，最大应力三种情况分别为\SI{1.834}{MPa},\SI{3.941}{MPa},\SI{3.881}{MPa}；最大变形分别为\SI{3.734}{\micro\meter},\SI{7.452}{\micro\meter},\SI{8.831}{\micro\meter}。相较于商用机架，在减重的情况下，轻量化设计的底座最大应力略有减小、最大变形仅增加$18\%$，且仍远小于肉眼可观测范围，故该设计可行。
+
+在系统整体架构设计上，为应对微型无人机平台固有的机载算力有限与能耗约束难题，本文创新性地采用了地面站辅助计算的分布式处理架构。具体而言，将计算密集型的实时视觉感知与处理任务（基于OpenCV算法框架）部署于地面高性能计算单元（如笔记本电脑），其计算效率与能力显著优于受限的机载嵌入式平台。这一设计决策有效规避了在无人机本体集成高性能计算模块所带来的额外重量与功耗负担，从而为后续集成VSERF柔性附着器件等关键功能模块预留了质量与功率的裕度。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.8\textwidth]{communication.png}
+  \caption{系统通信设计}
+\end{figure}
+
+基于上述设计，目前无人机平台（包含机载图传摄像头，不含电池与VSERF附着模块）的整机质量约为$33 g$，轻量化成果显著。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.4\textwidth]{weight.jpg}
+  \caption{无人机系统自重测试图}
+\end{figure}
+
+推力性能测试数据显示，平台在全油门状态下可产生约\SI{109.97}{g}的总升力；而在平衡自身重力的悬停状态下，仅需约$43\%$的油门输出即可实现稳定悬停。这表明该平台拥有充足的推力冗余（推力重量比远大于$2:1$）。高推力裕度不仅为常规飞行的抗扰动能力提供了保障，更为后续执行自主栖息任务中可能涉及的复杂姿态机动、与接触表面瞬间的相互作用力补偿以及附着后的稳定性维持，提供了至关重要的动力学控制余量。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.8\textwidth]{Force_test.png}
+  \caption{全油门推力测试图}
+\end{figure}
+
+
+% \section{栖息装置系统集成}
+
+\subsection{柔性附着结构 VSERF 的制备}
+
+实验室目前已具备电压可切换电流变流体柔性附着器件的制备能力。该器件通过将 VSERF 材料封装于特定结构内，并在外加电场作用下触发其流变特性变化，从而实现附着力的快速调节。在不同外加电压条件下，VSERF 器件所能提供的法向粘附力测试结果如图 \ref{VSERF_Force} 所示。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.7\textwidth]{VSERF_Force.png}
+  \caption{VSERF粘附力随电压变化曲线}\label{VSERF_Force}
+\end{figure}
+
+实验结果表明，随着施加电压的逐渐升高，VSERF 内部颗粒在电场作用下发生极化并形成稳定的链状结构，其等效剪切强度与界面摩擦力显著增强，从而使器件对接触表面的粘附力呈现出单调上升趋势。
+
+在当前工艺条件下，单个 VSERF 器件所能提供的最大稳定粘附力约为\SI{1.12}{N}，对应可承载约\SI{114}{g}的垂直重物。相较于微型无人机自身质量，该粘附能力具备较为充足的安全裕度，为无人机在垂直或倾斜表面上的稳定栖停提供了基础保障。同时，由于 VSERF 的附着与脱附过程完全由电信号触发，无需复杂的机械传动结构，其系统集成形式紧凑、控制逻辑简单，尤其适合对质量、体积与能耗高度敏感的微型无人机平台。
