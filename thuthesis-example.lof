@@ -7,18 +7,21 @@
 \contentsline {figure}{\numberline {1.7}{\ignorespaces 本项目的工作进度计划}}{10}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces 三种无人机基座设计应力图}}{12}{figure.caption.25}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces 系统通信设计}}{13}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces 无人机系统自重测试图}}{13}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 无人机系统自重测试图}}{14}{figure.caption.27}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces 无人机实机图}}{14}{figure.caption.28}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces 全油门推力测试图}}{14}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 全油门推力测试图}}{15}{figure.caption.29}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces 无人机底座设计示意图}}{16}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces 无人机VSERF支架设计示意图}}{16}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces VSERF粘附力随电压变化曲线}}{17}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces 高压发生器输入-输出响应曲线}}{18}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces 电流变液相关电路}}{19}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 仿真场景}}{22}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces MuJoCo 仿真中无人机栖息任务全流程时间序列结果}}{26}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 无人机控制器逻辑图}}{31}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces 双层PID控制系统框图}}{33}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 无人机VSERF支架设计示意图}}{17}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 无人机 VSERF 支架应力应变示意图}}{17}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces VSERF粘附力随电压变化曲线}}{18}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 高压发生器输入-输出响应曲线}}{19}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces 电流变液相关电路}}{20}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 仿真场景}}{23}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces MuJoCo 仿真中无人机栖息任务全流程时间序列结果}}{27}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 无人机控制器逻辑图}}{32}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 双层PID控制系统框图}}{34}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces VSERF粘附力随电压变化曲线}}{42}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces VSERF粘附力随电压变化曲线}}{42}{figure.caption.43}%
 \let \contentsline \ttl@gobblecontents 
 \contentsfinish 
 \contentsfinish 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  28 MAY 2026 21:31
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  29 MAY 2026 00:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,45 +1320,49 @@ File: figures/timeline.png Graphic file (type bmp)
 <figures/timeline.png>
 ) (./data/chap02.tex [10]
 第2章
+[11
+
+]
 File: figures/flat-stress.PNG Graphic file (type bmp)
 <figures/flat-stress.PNG>
 File: figures/ori-stress.PNG Graphic file (type bmp)
 <figures/ori-stress.PNG>
 File: figures/new-stress.PNG Graphic file (type bmp)
 <figures/new-stress.PNG>
-[11
-
-]
+ [12]
 File: figures/communication.png Graphic file (type bmp)
 <figures/communication.png>
- [12]
 File: figures/weight.jpg Graphic file (type bmp)
 <figures/weight.jpg>
 File: figures/drone_02.JPG Graphic file (type bmp)
 <figures/drone_02.JPG>
 File: figures/drone_01.JPG Graphic file (type bmp)
 <figures/drone_01.JPG>
+ [13]
 File: figures/Force_test.png Graphic file (type bmp)
 <figures/Force_test.png>
- [13] [14] [15]
+ [14] [15]
 File: figures/bottom.png Graphic file (type bmp)
 <figures/bottom.png>
+ [16]
 File: figures/VSERF_stand.png Graphic file (type bmp)
 <figures/VSERF_stand.png>
- [16]
+File: figures/VSERF_stand_sim.png Graphic file (type bmp)
+<figures/VSERF_stand_sim.png>
+ [17]
 File: figures/VSERF_Force.png Graphic file (type bmp)
 <figures/VSERF_Force.png>
- [17]
+ [18]
 File: figures/HVPS_Curve.png Graphic file (type bmp)
 <figures/HVPS_Curve.png>
- [18]
+ [19]
 File: figures/VSERF_Circuit.png Graphic file (type bmp)
 <figures/VSERF_Circuit.png>
- [19] [20]) (./data/chap03.tex [21]
+ [20] [21]) (./data/chap03.tex [22]
 第3章
 File: figures/sim01.png Graphic file (type bmp)
 <figures/sim01.png>
-[22
+[23
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 40--41
@@ -1440,7 +1444,7 @@ Underfull \hbox (badness 1014) in paragraph at lines 68--69
 \TU/SimSun(0)/m/n/11.04124 对 应 期 望 运 动 趋 势 而 非
  []
 
-[23] [24]
+[24] [25]
 File: figures/sim01.PNG Graphic file (type bmp)
 <figures/sim01.PNG>
 File: figures/sim02.PNG Graphic file (type bmp)
@@ -1457,27 +1461,31 @@ File: figures/sim07.PNG Graphic file (type bmp)
 <figures/sim07.PNG>
 File: figures/sim08.PNG Graphic file (type bmp)
 <figures/sim08.PNG>
- [25] [26]
+ [26] [27]
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 12.74046pt on input line 187.
- [27] [28] [29]
+ [28] [29] [30]
 File: figures/controller.png Graphic file (type bmp)
 <figures/controller.png>
- [30] [31]
+ [31] [32]
 File: figures/PID.png Graphic file (type bmp)
 <figures/PID.png>
- [32] [33] [34] [35] [36] [37] [38]) (./data/chap04.tex [39]
+ [33] [34] [35] [36] [37] [38] [39]) (./data/chap04.tex [40]
 第4章
-) (./data/chap05.tex [40
+File: figures/experiment_setup.JPG Graphic file (type bmp)
+<figures/experiment_setup.JPG>
+File: figures/gs_set.jpg Graphic file (type bmp)
+<figures/gs_set.jpg>
+) (./data/chap05.tex [41
 
-]
+] [42] [43]
 第5章
-[41
+[44
 
-] [42])
+] [45])
 \openout3 = `bu.aux'.
 
- (./thuthesis-example.bbl [43]
+ (./thuthesis-example.bbl [46]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 7.00075pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -1486,17 +1494,17 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 24.
- [44
+ [47
 
 
-]) (./data/appendix.tex (./bu.aux) [45]
+]) (./data/appendix.tex (./bu.aux) [48]
 附录 A
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 6.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 9.55533pt on input line 6.
-[46
+[49
 
-] [47] [48]) [49] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [50
+] [50] [51]) [52] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [53
 
 
 
@@ -1515,7 +1523,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-(./bu.aux) [51
+(./bu.aux) [54
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1523,16 +1531,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `thuthesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 9A4AD9BB825E30887283E08004F3A1DC;8862.
+(rerunfilecheck)             Checksum: C47A74C8FA9AB82B1372EDFC38A004F7;8862.
  ) 
 Here is how much of TeX's memory you used:
- 33638 strings out of 476676
- 725886 string characters out of 5799435
+ 33674 strings out of 476676
+ 726852 string characters out of 5799435
  2128842 words of memory out of 5000000
- 55069 multiletter control sequences out of 15000+600000
+ 55102 multiletter control sequences out of 15000+600000
  566801 words of font info for 200 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
  106i,14n,130p,1433b,4065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (63 pages).
+Output written on thuthesis-example.pdf (66 pages).
