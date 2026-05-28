@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  28 MAY 2026 01:30
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  28 MAY 2026 15:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1205,14 +1205,14 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 ]) [2
 
 
-] (./thuthesis-example.toc)
+] (./thuthesis-example.toc [3
+
+
+])
 \tf@toc=\write5
 \openout5 = `thuthesis-example.toc'.
 
- [3
-
-
-] (./thuthesis-example.lof
+ [4] (./thuthesis-example.lof
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 12.04628pt on input line 2.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -1229,25 +1229,26 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 \tf@lof=\write6
 \openout6 = `thuthesis-example.lof'.
 
- [4
+ [5
 
 
 ] (./thuthesis-example.lot)
 \tf@lot=\write7
 \openout7 = `thuthesis-example.lot'.
 
- (./data/denotation.tex [5
+ (./data/denotation.tex [6
 
 
-]) [6
+]) [7
 
+
+] [8
 
 ] (./data/chap01.tex
 第1章
 File: figures/kinds_of_UAV.png Graphic file (type bmp)
 <figures/kinds_of_UAV.png>
 [1
-
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 26.
@@ -1269,15 +1270,19 @@ File: figures/grab.png Graphic file (type bmp)
 File: figures/sticker.png Graphic file (type bmp)
 <figures/sticker.png>
  [3]
+Overfull \hbox (13.85674pt too wide) in paragraph at lines 77--104
+ [][] 
+ []
+
+[4]
 File: figures/ERF.png Graphic file (type bmp)
 <figures/ERF.png>
- [4]
 File: figures/VSERF_Zhao.png Graphic file (type bmp)
 <figures/VSERF_Zhao.png>
- [5] [6] [7]
+ [5] [6] [7] [8]
 File: figures/target.png Graphic file (type bmp)
 <figures/target.png>
- [8] [9]
+ [9]
 File: figures/timeline.png Graphic file (type bmp)
 <figures/timeline.png>
 ) (./data/chap02.tex [10]
@@ -1293,58 +1298,85 @@ File: figures/new-stress.PNG Graphic file (type bmp)
 ]
 File: figures/communication.png Graphic file (type bmp)
 <figures/communication.png>
+ [12]
 File: figures/weight.jpg Graphic file (type bmp)
 <figures/weight.jpg>
 File: figures/drone_02.JPG Graphic file (type bmp)
 <figures/drone_02.JPG>
 File: figures/drone_01.JPG Graphic file (type bmp)
 <figures/drone_01.JPG>
- [12] [13]
 File: figures/Force_test.png Graphic file (type bmp)
 <figures/Force_test.png>
+ [13]
 File: figures/VSERF_Force.png Graphic file (type bmp)
 <figures/VSERF_Force.png>
- [14]
+ [14] [15]
 File: figures/HVPS_Curve.png Graphic file (type bmp)
 <figures/HVPS_Curve.png>
- [15] [16]
+ [16]
 File: figures/VSERF_Circuit.png Graphic file (type bmp)
 <figures/VSERF_Circuit.png>
-) (./data/chap03.tex [17] [18]
+ [17]) (./data/chap03.tex [18]
 第3章
-LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 12.74046pt on input line 17.
+File: figures/sim01.png Graphic file (type bmp)
+<figures/sim01.png>
 [19
 
-]) (./data/chap04.tex [20]
+] [20]
+File: figures/sim01.PNG Graphic file (type bmp)
+<figures/sim01.PNG>
+File: figures/sim02.PNG Graphic file (type bmp)
+<figures/sim02.PNG>
+File: figures/sim03.PNG Graphic file (type bmp)
+<figures/sim03.PNG>
+File: figures/sim04.PNG Graphic file (type bmp)
+<figures/sim04.PNG>
+File: figures/sim05.PNG Graphic file (type bmp)
+<figures/sim05.PNG>
+File: figures/sim06.PNG Graphic file (type bmp)
+<figures/sim06.PNG>
+File: figures/sim07.PNG Graphic file (type bmp)
+<figures/sim07.PNG>
+File: figures/sim08.PNG Graphic file (type bmp)
+<figures/sim08.PNG>
+ [21] [22]
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
+(Font)              scaled to size 12.74046pt on input line 137.
+ [23] [24] [25] [26]
+File: figures/controller.png Graphic file (type bmp)
+<figures/controller.png>
+ [27]
+File: figures/PID.png Graphic file (type bmp)
+<figures/PID.png>
+ [28] [29] [30] [31] [32] [33]) (./data/chap04.tex [34]
 第4章
 )
 \openout3 = `bu.aux'.
 
- (./thuthesis-example.bbl [21
+ (./thuthesis-example.bbl [35
 
 ]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 26.
+(Font)              scaled to size 7.00075pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 26.
+(Font)              scaled to size 5.00053pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 26.
+(Font)              scaled to size 6.99925pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 26.
- [22
+(Font)              scaled to size 4.99947pt on input line 24.
+ [36
 
 
-] [23]) (./data/appendix.tex (./bu.aux) [24]
+] [37]) (./data/appendix.tex (./bu.aux) [38]
 附录 A
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 (./thuthesis-example-appendix-a.aux)
 \openout3 = `thuthesis-example-appendix-a.aux'.
 
- (./thuthesis-example-appendix-a.bbl [25
+ (./thuthesis-example-appendix-a.bbl [39
 
-])) [26] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [27
+])) [40] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [41
 
 
 
@@ -1363,7 +1395,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-(./bu.aux) [28
+(./bu.aux) [42
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1371,20 +1403,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thuthesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 72658301F193D6AABD8D01AB9884093A;5718.
+(rerunfilecheck)             Checksum: 77D57EDB0AC12515F824AAC4D38F21AF;8240.
  ) 
 Here is how much of TeX's memory you used:
- 32033 strings out of 476676
- 705412 string characters out of 5799435
- 1947842 words of memory out of 5000000
- 53492 multiletter control sequences out of 15000+600000
+ 32135 strings out of 476676
+ 706695 string characters out of 5799435
+ 1953842 words of memory out of 5000000
+ 53584 multiletter control sequences out of 15000+600000
  566785 words of font info for 198 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
- 106i,14n,130p,1433b,2768s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,14n,130p,1433b,2790s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (38 pages).
+Output written on thuthesis-example.pdf (54 pages).

@@ -1,0 +1,135 @@
+<mxfile host="Electron">
+  <diagram name="第 1 页" id="DYHbZK16Id-8N1qAvFu7">
+    <mxGraphModel dx="1334" dy="920" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZJ0MOm-f3TcjIquOZzB4-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="570" width="810" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" value="无人机控制系统逻辑框图" vertex="1">
+          <mxGeometry height="40" width="400" x="235" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vision_group" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" value="视觉伺服控制器（地面站）" vertex="1">
+          <mxGeometry height="140" width="560" x="60" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="camera" parent="vision_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="机载摄像头&#xa;(图像采集)" vertex="1">
+          <mxGeometry height="60" width="120" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="april_tag" parent="vision_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="AprilTag识别&#xa;&amp; 位姿估计" vertex="1">
+          <mxGeometry height="60" width="130" x="200" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vision_pid" parent="vision_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="视觉PID控制器&#xa;(滚转/俯仰/油门)" vertex="1">
+          <mxGeometry height="60" width="140" x="390" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="attitude_group" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" value="姿态控制器（飞控） — 串级PID" vertex="1">
+          <mxGeometry height="140" width="560" x="60" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="angle_pid" parent="attitude_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="外环：角度PID&#xa;(滚转/俯仰/偏航)" vertex="1">
+          <mxGeometry height="60" width="140" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rate_pid" parent="attitude_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="内环：角速度PID&#xa;(滚转/俯仰/偏航)" vertex="1">
+          <mxGeometry height="60" width="140" x="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="motor_mix" parent="attitude_group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="力矩分配&#xa;&amp; 电机" vertex="1">
+          <mxGeometry height="60" width="110" x="430" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dynamics" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" value="四旋翼无人机&#xa;动力学模型" vertex="1">
+          <mxGeometry height="70" width="150" x="660" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ZJ0MOm-f3TcjIquOZzB4-1" edge="1" parent="1" source="states" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;strokeWidth=2;" target="rate_pid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZJ0MOm-f3TcjIquOZzB4-2" connectable="0" parent="ZJ0MOm-f3TcjIquOZzB4-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;角速度 ω 反馈&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4605" y="-2" as="geometry">
+            <mxPoint x="-63" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="states" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=left;" value="状态输出：&#xa;姿态角 φ,θ,ψ&#xa;角速度 p,q,r" vertex="1">
+          <mxGeometry height="60" width="140" x="650" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_camera_to_tag" edge="1" parent="1" source="camera" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="april_tag" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_tag_to_vpid" edge="1" parent="1" source="april_tag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" target="vision_pid" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_vpid_to_angle" edge="1" parent="1" source="vision_pid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;fontColor=#333333;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="angle_pid" value="期望滚转 φ_d&#xa;期望俯仰 θ_d">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="340" />
+              <mxPoint x="150" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_throttle_to_motor" edge="1" parent="1" source="vision_pid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;strokeWidth=2;dashed=1;exitX=0.574;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;" value="油门指令">
+          <mxGeometry relative="1" x="-0.0503" y="21" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="530" y="200" />
+            </Array>
+            <mxPoint x="530" y="210" as="sourcePoint" />
+            <mxPoint x="530" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_angle_to_rate" edge="1" parent="1" source="angle_pid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;" target="rate_pid" value="期望角速度&lt;div&gt;ω_d&lt;/div&gt;">
+          <mxGeometry relative="1" y="-20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_rate_to_motor" edge="1" parent="1" source="rate_pid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;" target="motor_mix" value="控制力矩 τ">
+          <mxGeometry relative="1" x="-0.1429" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_motor_to_dyn" edge="1" parent="1" source="motor_mix" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;strokeWidth=2;" target="dynamics" value="电机推力 F_i">
+          <mxGeometry relative="1" x="-0.5484" y="15" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="590" y="330" />
+              <mxPoint x="680" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_dyn_to_state" edge="1" parent="1" source="dynamics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="states" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="773" y="390" />
+              <mxPoint x="773" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fb_angle" edge="1" parent="1" source="states" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;strokeColor=#b85450;strokeWidth=2;dashed=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="angle_pid" value="姿态角 η 反馈">
+          <mxGeometry relative="1" x="0.0621" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="755" y="540" />
+              <mxPoint x="150" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fb_image" edge="1" parent="1" source="dynamics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=10;strokeColor=#9673a6;strokeWidth=1.5;dashed=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" target="camera" value="图像反馈">
+          <mxGeometry relative="1" x="-0.7166" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="698" y="120" />
+              <mxPoint x="150" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend_fast" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="快环 (50 Hz)" vertex="1">
+          <mxGeometry height="30" width="90" x="90" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_slow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="慢环 (25 Hz)" vertex="1">
+          <mxGeometry height="30" width="90" x="200" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_fb" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;fontSize=10;dashed=1;" value="反馈信号" vertex="1">
+          <mxGeometry height="30" width="90" x="310" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" value="说明：视觉伺服控制器运行于地面站，姿态控制器运行于飞控；&#xa;姿态角 η = [φ, θ, ψ]^T，角速度 ω = [p, q, r]^T" vertex="1">
+          <mxGeometry height="40" width="500" x="60" y="560" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

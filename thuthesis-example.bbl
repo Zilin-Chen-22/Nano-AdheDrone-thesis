@@ -19,92 +19,66 @@ NONAMI K.
 
 \bibitem[Colomina et~al.(2014)Colomina and Molina]{COLOMINA201479}
 COLOMINA I, MOLINA P.
-\newblock Unmanned aerial systems for photogrammetry and remote sensing: A
-  review\allowbreak[J/OL].
+\newblock Unmanned aerial systems for photogrammetry and remote sensing: A review\allowbreak[J/OL].
 \newblock ISPRS Journal of Photogrammetry and Remote Sensing, 2014, 92: 79-97.
-\newblock
-  \url{https://www.sciencedirect.com/science/article/pii/S0924271614000501}.
+\newblock \url{https://www.sciencedirect.com/science/article/pii/S0924271614000501}.
 \newblock DOI: \doi{https://doi.org/10.1016/j.isprsjprs.2014.02.013}.
 
 \bibitem[Kim et~al.(2018)Kim, Lim, and Cho]{kim2018drone}
 KIM S~J, LIM G~J, CHO J.
-\newblock Drone flight scheduling under uncertainty on battery duration and air
-  temperature\allowbreak[J].
+\newblock Drone flight scheduling under uncertainty on battery duration and air temperature\allowbreak[J].
 \newblock Computers \& Industrial Engineering, 2018, 117: 291-302.
 
-\bibitem[Mohsan et~al.(2022)Mohsan, Khan, Noor, Ullah, and
-  Alsharif]{mohsan2022towards}
+\bibitem[Mohsan et~al.(2022)Mohsan, Khan, Noor, Ullah, and Alsharif]{mohsan2022towards}
 MOHSAN S~A~H, KHAN M~A, NOOR F, et~al.
-\newblock Towards the unmanned aerial vehicles (uavs): A comprehensive
-  review\allowbreak[J].
+\newblock Towards the unmanned aerial vehicles (uavs): A comprehensive review\allowbreak[J].
 \newblock Drones, 2022, 6\allowbreak (6): 147.
 
-\bibitem[Hang et~al.(2019)Hang, Lyu, Song, Stork, Dollar, Kragic, and
-  Zhang]{hang2019perching}
+\bibitem[Hang et~al.(2019)Hang, Lyu, Song, Stork, Dollar, Kragic, and Zhang]{hang2019perching}
 HANG K, LYU X, SONG H, et~al.
-\newblock Perching and resting—a paradigm for uav maneuvering with
-  modularized landing gears\allowbreak[J].
+\newblock Perching and resting—a paradigm for uav maneuvering with modularized landing gears\allowbreak[J].
 \newblock Science Robotics, 2019, 4\allowbreak (28): eaau6637.
 
-\bibitem[Kirchgeorg et~al.(2021)Kirchgeorg and
-  Mintchev]{kirchgeorg2021hedgehog}
+\bibitem[Kirchgeorg et~al.(2021)Kirchgeorg and Mintchev]{kirchgeorg2021hedgehog}
 KIRCHGEORG S, MINTCHEV S.
-\newblock Hedgehog: Drone perching on tree branches with high-friction origami
-  spines\allowbreak[J].
-\newblock IEEE Robotics and Automation Letters, 2021, 7\allowbreak (1):
-  602-609.
+\newblock Hedgehog: Drone perching on tree branches with high-friction origami spines\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2021, 7\allowbreak (1): 602-609.
 
-\bibitem[Roderick et~al.(2021)Roderick, Cutkosky, and
-  Lentink]{roderick2021bird}
+\bibitem[Roderick et~al.(2021)Roderick, Cutkosky, and Lentink]{roderick2021bird}
 RODERICK W~R, CUTKOSKY M~R, LENTINK D.
-\newblock Bird-inspired dynamic grasping and perching in arboreal
-  environments\allowbreak[J].
+\newblock Bird-inspired dynamic grasping and perching in arboreal environments\allowbreak[J].
 \newblock Science Robotics, 2021, 6\allowbreak (61): eabj7562.
 
-\bibitem[Park et~al.(2020)Park, Drew, Follmer, and
-  Rivas-Davila]{park2020lightweight}
+\bibitem[Park et~al.(2020)Park, Drew, Follmer, and Rivas-Davila]{park2020lightweight}
 PARK S, DREW D~S, FOLLMER S, et~al.
-\newblock Lightweight high voltage generator for untethered electroadhesive
-  perching of micro air vehicles\allowbreak[J].
-\newblock IEEE Robotics and Automation Letters, 2020, 5\allowbreak (3):
-  4485-4492.
+\newblock Lightweight high voltage generator for untethered electroadhesive perching of micro air vehicles\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2020, 5\allowbreak (3): 4485-4492.
 
-\bibitem[Zhang et~al.(2017)Zhang, Chermprayong, Alhinai, Siddall, and
-  Kovac]{zhang2017spidermav}
+\bibitem[Zhang et~al.(2017)Zhang, Chermprayong, Alhinai, Siddall, and Kovac]{zhang2017spidermav}
 ZHANG K, CHERMPRAYONG P, ALHINAI T, et~al.
-\newblock Spidermav: Perching and stabilizing micro aerial vehicles with
-  bio-inspired tensile anchoring systems\allowbreak[C]//\allowbreak
-2017 IEEE/RSJ international conference on intelligent robots and systems
-  (IROS).
+\newblock Spidermav: Perching and stabilizing micro aerial vehicles with bio-inspired tensile anchoring systems\allowbreak[C]//\allowbreak
+2017 IEEE/RSJ international conference on intelligent robots and systems (IROS).
 \newblock IEEE, 2017: 6849-6854.
 
-\bibitem[Ang et~al.(2022)Ang, Librado, Salaan, Maglasang, Sanchez, and
-  Ang]{ang2022drone}
+\bibitem[Ang et~al.(2022)Ang, Librado, Salaan, Maglasang, Sanchez, and Ang]{ang2022drone}
 ANG J~D, LIBRADO L, SALAAN C~J, et~al.
-\newblock Drone with pneumatic-tethered suction-based perching mechanism for
-  high payload application\allowbreak[C]//\allowbreak
-2022 IEEE/RSJ International Conference on Intelligent Robots and Systems
-  (IROS).
+\newblock Drone with pneumatic-tethered suction-based perching mechanism for high payload application\allowbreak[C]//\allowbreak
+2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
 \newblock IEEE, 2022: 12154-12161.
 
-\bibitem[O’Halloran et~al.(2008)O’Halloran, O’malley, and
-  McHugh]{o2008review}
+\bibitem[O’Halloran et~al.(2008)O’Halloran, O’malley, and McHugh]{o2008review}
 O’HALLORAN A, O’MALLEY F, MCHUGH P.
-\newblock A review on dielectric elastomer actuators, technology, applications,
-  and challenges\allowbreak[J].
+\newblock A review on dielectric elastomer actuators, technology, applications, and challenges\allowbreak[J].
 \newblock Journal of Applied Physics, 2008, 104\allowbreak (7).
 
 \bibitem[Crowley et~al.(2022)Crowley, Zeng, and Su]{crowley20223d}
 CROWLEY G~B, ZENG X, SU H~J.
-\newblock A 3d printed soft robotic gripper with a variable stiffness enabled
-  by a novel positive pressure layer jamming technology\allowbreak[J].
-\newblock IEEE Robotics and Automation Letters, 2022, 7\allowbreak (2):
-  5477-5482.
+\newblock A 3d printed soft robotic gripper with a variable stiffness enabled by a novel positive pressure layer jamming technology\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2022, 7\allowbreak (2): 5477-5482.
 
 \bibitem[Liu et~al.(2012)Liu and Choi]{liu2012electrorheological}
 LIU Y~D, CHOI H~J.
-\newblock Electrorheological fluids: smart soft matter and
-  characteristics\allowbreak[J].
+\newblock Electrorheological fluids: smart soft matter and characteristics\allowbreak[J].
 \newblock Soft Matter, 2012, 8\allowbreak (48): 11961-11978.
 
 \bibitem[Hao(2001)]{hao2001electrorheological}
@@ -114,21 +88,17 @@ HAO T.
 
 \bibitem[Hao et~al.(1998)Hao, Kawai, and Ikazaki]{hao1998mechanism}
 HAO T, KAWAI A, IKAZAKI F.
-\newblock Mechanism of the electrorheological effect: evidence from the
-  conductive, dielectric, and surface characteristics of water-free
-  electrorheological fluids\allowbreak[J].
+\newblock Mechanism of the electrorheological effect: evidence from the conductive, dielectric, and surface characteristics of water-free electrorheological fluids\allowbreak[J].
 \newblock Langmuir, 1998, 14\allowbreak (5): 1256-1262.
 
 \bibitem[Pan et~al.(2022)Pan, Liu, and Zhao]{pan2022stretchable}
 PAN Y, LIU X~J, ZHAO H.
-\newblock Stretchable and conformable variable stiffness device through an
-  electrorheological fluid\allowbreak[J].
+\newblock Stretchable and conformable variable stiffness device through an electrorheological fluid\allowbreak[J].
 \newblock Soft Matter, 2022, 18\allowbreak (48): 9163-9171.
 
 \bibitem[{Betaflight Team}(2015)]{betaflight}
 {Betaflight Team}.
-\newblock {Betaflight}: Open source flight controller
-  firmware\allowbreak[EB/OL].
+\newblock {Betaflight}: Open source flight controller firmware\allowbreak[EB/OL].
 \newblock 2015.
 \newblock \url{https://github.com/betaflight/betaflight}.
 
@@ -140,24 +110,18 @@ PAN Y, LIU X~J, ZHAO H.
 
 \bibitem[Xia et~al.(2024)Xia, Li, Li, Zou, and Zuo]{xia2024cooperative}
 XIA K, LI X, LI K, et~al.
-\newblock Cooperative tracking of quadrotor uavs using parallel optimal
-  learning control\allowbreak[J].
-\newblock IEEE Transactions on Automation Science and Engineering, 2024, 22:
-  3308-3319.
+\newblock Cooperative tracking of quadrotor uavs using parallel optimal learning control\allowbreak[J].
+\newblock IEEE Transactions on Automation Science and Engineering, 2024, 22: 3308-3319.
 
-\bibitem[Joseph et~al.(2024)Joseph, Gunturu, Shrote, and
-  Sandosh]{joseph2024autonomous}
+\bibitem[Joseph et~al.(2024)Joseph, Gunturu, Shrote, and Sandosh]{joseph2024autonomous}
 JOSEPH B~S, GUNTURU S, SHROTE S, et~al.
-\newblock Autonomous docking for underwater drones using aruco marker based
-  localization\allowbreak[C]//\allowbreak
-2024 4th International Conference on Robotics, Automation and Artificial
-  Intelligence (RAAI).
+\newblock Autonomous docking for underwater drones using aruco marker based localization\allowbreak[C]//\allowbreak
+2024 4th International Conference on Robotics, Automation and Artificial Intelligence (RAAI).
 \newblock IEEE, 2024: 207-212.
 
 \bibitem[Todorov et~al.(2012)Todorov, Erez, and Tassa]{todorov2012mujoco}
 TODOROV E, EREZ T, TASSA Y.
-\newblock Mujoco: A physics engine for model-based
-  control\allowbreak[C/OL]//\allowbreak
+\newblock Mujoco: A physics engine for model-based control\allowbreak[C/OL]//\allowbreak
 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems.
 \newblock IEEE, 2012: 5026-5033.
 \newblock DOI: \doi{10.1109/IROS.2012.6386109}.
@@ -174,13 +138,10 @@ TODOROV E, EREZ T, TASSA Y.
 
 \bibitem[Dupont(1974)]{dupont1974bone}
 DUPONT B.
-\newblock Bone marrow transplantation in severe combined immunodeficiency with
-  an unrelated mlc compatible donor\allowbreak[C]//\allowbreak
+\newblock Bone marrow transplantation in severe combined immunodeficiency with an unrelated mlc compatible donor\allowbreak[C]//\allowbreak
 WHITE H~J, SMITH R.
-\newblock Proceedings of the third annual meeting of the International Society
-  for Experimental Hematology.
-\newblock Houston: International Society for Experimental Hematology, 1974:
-  44-46.
+\newblock Proceedings of the third annual meeting of the International Society for Experimental Hematology.
+\newblock Houston: International Society for Experimental Hematology, 1974: 44-46.
 
 \bibitem[郑开青(1987)]{zhengkaiqing1987}
 郑开青.
@@ -194,47 +155,37 @@ WHITE H~J, SMITH R.
 
 \bibitem[中华人民共和国国家技术监督局(1994)]{jianduju1994}
 中华人民共和国国家技术监督局.
-\newblock GB3100-3102.
-  中华人民共和国国家标准-量与单位\allowbreak[S].
+\newblock GB3100-3102. 中华人民共和国国家标准-量与单位\allowbreak[S].
 \newblock 北京: 中国标准出版社, 1994.
 
 \bibitem[Merkt et~al.(1995)Merkt, Mackenzie, and Softley]{merkt1995rotational}
 MERKT F, MACKENZIE S~R, SOFTLEY T~P.
-\newblock Rotational autoionization dynamics in high rydberg states of
-  nitrogen\allowbreak[J].
+\newblock Rotational autoionization dynamics in high rydberg states of nitrogen\allowbreak[J].
 \newblock J Chem Phys, 1995, 103: 4509-4518.
 
-\bibitem[Mellinger et~al.(1996)Mellinger, Vidal, and
-  Jungen]{mellinger1996laser}
+\bibitem[Mellinger et~al.(1996)Mellinger, Vidal, and Jungen]{mellinger1996laser}
 MELLINGER A, VIDAL C~R, JUNGEN C.
-\newblock Laser reduced fluorescence study of the carbon monoxide nd triplet
-  rydberg series - experimental results and multichannel quantum defect
-  analysis\allowbreak[J].
+\newblock Laser reduced fluorescence study of the carbon monoxide nd triplet rydberg series - experimental results and multichannel quantum defect analysis\allowbreak[J].
 \newblock J Chem Phys, 1996, 104: 8913-8921.
 
 \bibitem[Bixon et~al.(1996)Bixon and Jortner]{bixon1996dynamics}
 BIXON M, JORTNER J.
-\newblock The dynamics of predissociating high {Rydberg} states of
-  {NO}\allowbreak[J].
+\newblock The dynamics of predissociating high {Rydberg} states of {NO}\allowbreak[J].
 \newblock J Chem Phys, 1996, 105: 1363-1382.
 
 \bibitem[马辉\ 等(1995)马辉, 李俭, 刘耀明, et~al.]{mahui1995}
 马辉, 李俭, 刘耀明, 等.
-\newblock 利用 {REMPI} 方法测量 {BaF}
-  高里德堡系列光谱\allowbreak[J].
+\newblock 利用 {REMPI} 方法测量 {BaF} 高里德堡系列光谱\allowbreak[J].
 \newblock 化学物理学报, 1995, 8: 308-311.
 
-\bibitem[Carlson et~al.(1981)Carlson, Taylor, Jones, and
-  Schawlow]{carlson1981two}
+\bibitem[Carlson et~al.(1981)Carlson, Taylor, Jones, and Schawlow]{carlson1981two}
 CARLSON N~W, TAYLOR A~J, JONES K~M, et~al.
-\newblock Two-step polarization-labeling spectroscopy of excited states of
-  {Na2}\allowbreak[J].
+\newblock Two-step polarization-labeling spectroscopy of excited states of {Na2}\allowbreak[J].
 \newblock Phys Rev A, 1981, 24: 822-834.
 
 \bibitem[Taylor et~al.(1983)Taylor, Jones, and Schawlow]{taylor1983scanning}
 TAYLOR A~J, JONES K~M, SCHAWLOW A~L.
-\newblock Scanning pulsed-polarization spectrometer applied to
-  {Na2}\allowbreak[J].
+\newblock Scanning pulsed-polarization spectrometer applied to {Na2}\allowbreak[J].
 \newblock J Opt Soc Am, 1983, 73: 994-998.
 
 \bibitem[Taylor et~al.(1981)Taylor, Jones, and Schawlow]{taylor1981study}
@@ -244,15 +195,12 @@ TAYLOR A~J, JONES K~M, SCHAWLOW A~L.
 
 \bibitem[Shimizu et~al.(1983)Shimizu and Shimizu]{shimizu1983laser}
 SHIMIZU K, SHIMIZU F.
-\newblock Laser induced fluorescence spectra of the a {3$\Pi$u--X 1$\Sigma$g+}
-  band of {Na2} by molecular beam\allowbreak[J].
+\newblock Laser induced fluorescence spectra of the a {3$\Pi$u--X 1$\Sigma$g+} band of {Na2} by molecular beam\allowbreak[J].
 \newblock J Chem Phys, 1983, 78: 1126-1131.
 
-\bibitem[Atkinson et~al.(1982)Atkinson, Becker, and
-  Demtr{\"o}der]{atkinson1982experimental}
+\bibitem[Atkinson et~al.(1982)Atkinson, Becker, and Demtr{\"o}der]{atkinson1982experimental}
 ATKINSON J~B, BECKER J, DEMTR{\"O}DER W.
-\newblock Experimental observation of the a {3$\Pi$u} state of
-  {Na2}\allowbreak[J].
+\newblock Experimental observation of the a {3$\Pi$u} state of {Na2}\allowbreak[J].
 \newblock Chem Phys Lett, 1982, 87: 92-97.
 
 \bibitem[Kusch et~al.(1975)Kusch and Hessel]{kusch1975perturbations}
@@ -290,21 +238,18 @@ KUSCH P, HESSEL M~M.
 
 \bibitem[全国出版专业职业资格考试办公室(2004)]{chubanzhuanye2004}
 全国出版专业职业资格考试办公室.
-\newblock 全国出版专业职业资格考试辅导教材:
-  出版专业理论与实务•中级\allowbreak[M].
+\newblock 全国出版专业职业资格考试辅导教材: 出版专业理论与实务•中级\allowbreak[M].
 \newblock 2014 版.
 \newblock 上海: 上海辞书出版社, 2004: 299-307.
 
 \bibitem[{World Health Organization}(1970)]{who1970factors}
 {World Health Organization}.
-\newblock Factors regulating the immune response: Report of {WHO Scientific
-  Group}\allowbreak[R].
+\newblock Factors regulating the immune response: Report of {WHO Scientific Group}\allowbreak[R].
 \newblock Geneva: WHO, 1970.
 
 \bibitem[Peebles(2001)]{peebles2001probability}
 PEEBLES P~Z, Jr.
-\newblock Probability, random variables, and random signal
-  principles\allowbreak[M].
+\newblock Probability, random variables, and random signal principles\allowbreak[M].
 \newblock 4th ed.
 \newblock New York: McGraw Hill, 2001.
 
@@ -317,8 +262,7 @@ PEEBLES P~Z, Jr.
 
 \bibitem[Weinstein et~al.(1974)Weinstein and Swertz]{weinstein1974pathogenic}
 WEINSTEIN L, SWERTZ M~N.
-\newblock Pathogenic properties of invading
-  microorganism\allowbreak[M]//\allowbreak
+\newblock Pathogenic properties of invading microorganism\allowbreak[M]//\allowbreak
 SODEMAN W~A, Jr, SODEMAN W~A.
 \newblock Pathologic physiology: mechanisms of disease.
 \newblock Philadelphia: Saunders, 1974: 745-772.
@@ -342,13 +286,11 @@ SODEMAN W~A, Jr, SODEMAN W~A.
 \newblock 1957\allowbreak (1)--1990\allowbreak (4).
 \newblock 北京: 北京图书馆, 1957--1990.
 
-\bibitem[{American Association for the Advancement of
-  Science}(1883)]{aaas1883science}
+\bibitem[{American Association for the Advancement of Science}(1883)]{aaas1883science}
 {American Association for the Advancement of Science}.
 \newblock Science\allowbreak[J].
 \newblock 1883, 1\allowbreak (1)--.
-\newblock Washington, D.C.: American Association for the Advancement of
-  Science, 1883--.
+\newblock Washington, D.C.: American Association for the Advancement of Science, 1883--.
 
 \bibitem[傅刚\ 等(2000)傅刚, 赵承, and 李佳路]{fugang2000fengsha}
 傅刚, 赵承, 李佳路.

@@ -1,97 +1,627 @@
 % !TeX root = ../thuthesis-example.tex
 
-\chapter{数学符号和公式}
 
-\section{数学符号}
+\chapter{无人机控制系统构建}
+\section{仿真环境测试}
+\subsection{仿真平台搭建}
 
-中文论文的数学符号默认遵循 GB/T 3102.11—1993《物理科学和技术中使用的数学符号》
-\footnote{原 GB 3102.11—1993，自 2017 年 3 月 23 日起，该标准转为推荐性标准。}。
-该标准参照采纳 ISO 31-11:1992 \footnote{目前已更新为 ISO 80000-2:2019。}，
-但是与 \TeX{} 默认的美国数学学会（AMS）的符号习惯有所区别。
-具体地来说主要有以下差异：
-\begin{enumerate}
-  \item 大写希腊字母默认为斜体，如
-    \begin{equation*}
-      \Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omega.
-    \end{equation*}
-    注意有限增量符号 $\increment$ 固定使用正体，模板提供了 \cs{increment} 命令。
-  \item 小于等于号和大于等于号使用倾斜的字形 $\le$、$\ge$。
-  \item 积分号使用正体，比如 $\int$、$\oint$。
-  \item
-    偏微分符号 $\partial$ 使用正体。
-  \item
-    省略号 \cs{dots} 按照中文的习惯固定居中，比如
-    \begin{equation*}
-      1, 2, \dots, n \quad 1 + 2 + \dots + n.
-    \end{equation*}
-  \item
-    实部 $\Re$ 和虚部 $\Im$ 的字体使用罗马体。
-\end{enumerate}
+为验证所设计控制算法的可行性与鲁棒性，本文选用 MuJoCo作为主要仿真平台。MuJoCo 具备高效的连续动力学求解能力与稳定的接触建模机制，能够在较高采样频率下保持数值稳定性，尤其适用于包含接触力、约束动力学及多刚体系统的机器人与无人机仿真任务。因此，相较于传统基于离散近似或低精度接触模型的仿真工具，MuJoCo 在动力学精度与计算效率之间取得了较好的平衡，更适用于本文所涉及的复杂闭环控制验证场景。
 
-以上数学符号样式的差异可以在模板中统一设置。
-另外国标还有一些与 AMS 不同的符号使用习惯，需要用户在写作时进行处理：
-\begin{enumerate}
-  \item 数学常数和特殊函数名用正体，如
-    \begin{equation*}
-      \uppi = 3.14\dots; \quad
-      \symup{i}^2 = -1; \quad
-      \symup{e} = \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n.
-    \end{equation*}
-  \item 微分号使用正体，比如 $\dif y / \dif x$。
-  \item 向量、矩阵和张量用粗斜体（\cs{symbf}），如 $\symbf{x}$、$\symbf{\Sigma}$、$\symbfsf{T}$。
-  \item 自然对数用 $\ln x$ 不用 $\log x$。
-\end{enumerate}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width = \textwidth]{sim01.png}
+  \caption{仿真场景}\label{sim_setup}
+\end{figure}
 
+考虑到实际硬件平台在迭代过程中发生结构调整，本文并未完全采用与最终实验一致的无人机物理结构模型，而是选取开源无人机模型作为动力学载体，用于控制算法的理论可行性验证与系统级性能评估。该处理方式能够在保证动力学合理性的前提下，提高算法验证的通用性与可迁移性。
 
-英文论文的数学符号使用 \TeX{} 默认的样式。
-如果有必要，也可以通过设置 \verb|math-style| 选择数学符号样式。
+在系统建模方面，仿真平台集成了无人机动力学模块、控制器模块、末端执行机构（黏附装置）模型以及基于 AprilTag 的视觉反馈模块。其中，无人机模型负责提供六自由度刚体动力学响应；控制器模块实现位置/姿态闭环控制律计算；黏附模块用于模拟执行机构的接触与附着行为；视觉模块基于 AprilTag 检测结果生成相对位姿测量，从而构建闭环视觉伺服控制系统。上述模块共同构成完整的“感知--决策--执行”闭环仿真环境，用于验证所提出方法在复杂任务场景下的有效性。
 
-关于量和单位推荐使用
-\href{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}{\pkg{siunitx}}
-宏包，
-可以方便地处理希腊字母以及数字与单位之间的空白，
-比如：
-\SI{6.4e6}{m}，
-\SI{9}{\micro\meter}，
-\si{kg.m.s^{-1}}，
-\SIrange{10}{20}{\degreeCelsius}。
+无人机栖息任务通常可分解为若干连续阶段，包括起飞、视觉对准、上升接近、最终接近、黏附以及黏附完成等关键过程。在仿真环境中，本文对上述完整流程进行了系统性验证，以评估所提出控制与视觉融合方案在端到端任务中的可行性与稳定性。
 
+其中，上升接近阶段与最终接近阶段的核心区别在于机载视觉系统是否能够持续获取完整的 AprilTag 特征信息。具体而言，当无人机处于最终接近阶段时，目标通常处于视野边缘或仅部分可见，此时视觉测量信息不完整，难以构建稳定可靠的位姿估计；而在上升接近阶段，目标进入相机视场中心并保持完整可观测性，从而使基于 AprilTag 的视觉定位得以稳定运行。这一观测条件的差异，直接决定了无人机是否能够利用视觉反馈实现自身状态估计与闭环修正。
 
+进一步而言，当视觉定位不可用或不可靠时，系统通常退化至仅依赖姿态环（attitude loop）的控制模式。在该模式下，由于缺乏精确的位置反馈，无人机只能通过姿态调整间接影响运动趋势，其位置可控性显著下降，系统稳定性也更依赖于动力学自然衰减与环境约束。因此，是否能够通过 AprilTag 实现可靠的位姿估计，构成了决定无人机在接近阶段能否实现稳定、可控空间运动的关键因素。
 
-\section{数学公式}
+在此背景下，AprilTag 的尺度设计成为系统性能中的重要设计参数。若标签尺寸过大，无人机在较远距离时即可获得完整观测，但会导致在接近过程中较早出现视野丢失，从而影响末端对准精度，增加黏附误差风险；相反，若标签尺寸过小，则可能在中远距离阶段无法被可靠检测，使视觉定位无法建立，进而导致无人机在接近阶段长期依赖姿态控制，难以实现精确位置调节。因此，AprilTag 尺度需要在“远距离可检测性”与“近距离稳定观测性”之间进行权衡设计，以满足栖息任务全流程中对视觉可观测性与控制可行性的综合要求。
 
-数学公式可以使用 \env{equation} 和 \env{equation*} 环境。
-注意数学公式的引用应前后带括号，通常使用 \cs{eqref} 命令，比如式\eqref{eq:example}。
-\begin{equation}
-  \frac{1}{2 \uppi \symup{i}} \int_\gamma f = \sum_{k=1}^m n(\gamma; a_k) \mathscr{R}(f; a_k).
-  \label{eq:example}
-\end{equation}
+无人机在执行栖息或接近类任务时，一旦发生视觉目标丢失=，可能引发显著的安全风险与系统失稳问题，例如碰撞环境边界结构、姿态失控导致坠落，甚至在复杂实验场景中对操作者或周围设备造成潜在威胁。因此，在仿真环境中对系统进行充分的安全边界分析与失效工况评估具有重要意义。
 
-多行公式尽可能在“=”处对齐，推荐使用 \env{align} 环境。
+基于上述考虑，本文在仿真阶段重点关注开环控制条件下的安全位置选择问题，即在视觉信息不可用或退化时，系统仍能够维持有限稳定性的工作空间区域。通过合理设计开环控制的期望位置点或保守运动策略，可以有效降低视觉失效带来的风险，从而避免在真实硬件平台上发生不可逆的结构损伤或安全事故。
+
+需要指出的是，该类分析主要依赖于感知系统（尤其是相机成像几何与检测性能）而非精确的动力学参数模型。在视觉丢失相关问题中，系统行为的主导因素通常来自于观测可达性与检测鲁棒性，而非严格意义上的高保真物理建模。因此，即使在动力学模型存在一定简化或不完全精确的情况下，仍然可以通过仿真对视觉可观测性边界与安全控制区域进行有效的定性或半定量验证。这也使得该阶段的研究能够在较低建模成本下，为后续硬件实验提供具有参考价值的安全策略依据。
+
+\subsection{仿真结果}
+在 MuJoCo 仿真环境中，本文搭建了完整的无人机栖息任务流程，并基于简化控制器对系统行为进行了端到端验证。仿真结果表明，在一定范围内的视觉信息退化甚至短时视野丢失情况下，无人机系统仍能够保持整体稳定性，并在姿态控制与局部运动约束的共同作用下，完成预期的接近与黏附动作。
+
+这一现象表明，系统在视觉信息不完备时并不会立即失稳，而是依赖于姿态环与动力学自然响应在短时间尺度内维持可控运动状态，从而为黏附动作的执行提供时间窗口。因此，在合理设计控制策略与任务几何约束的前提下，视觉丢失并不必然导致任务失败。
+
+具体仿真过程如图~\ref{fig:mujo_co_full_pipeline} 所示，对应从起飞到最终黏附完成的完整时间序列演化过程。
+
+进一步地，从控制系统角度分析，该结果表明视觉闭环并非维持系统稳定性的唯一必要条件。在短时间视觉信息缺失的情况下，系统仍可依赖姿态内环的快速动态响应以及动力学系统的惯性特性维持有限可控性，从而避免状态发散。
+
+该现象对于无人机栖息任务具有重要工程意义：其一，在任务执行过程中允许存在一定程度的视觉不连续性，从而降低对高精度、全时可见目标检测的严格依赖；其二，在实际系统设计中，可通过合理配置控制器带宽与任务几何约束，在保证安全性的前提下提升系统鲁棒性；其三，该结果为后续硬件实现提供了可行性依据，说明在传感器受限或视觉退化条件下，任务仍具有可完成性。
+
+因此，仿真结果不仅验证了所提出控制框架在完整任务链中的有效性，同时也为后续视觉-控制协同设计提供了重要参考依据。
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim01.PNG}
+        \caption{起飞阶段}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim02.PNG}
+        \caption{起飞阶段}
+    \end{subfigure}
+    
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim03.PNG}
+        \caption{视觉对准}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim04.PNG}
+        \caption{上升接近（tag仍可见）}
+    \end{subfigure}
+
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim05.PNG}
+        \caption{最终接近（局部视野丢失）}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim06.PNG}
+        \caption{最终接近（局部视野丢失）}
+    \end{subfigure}
+
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim07.PNG}
+        \caption{黏附器件启动}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sim08.PNG}
+        \caption{黏附完成（无人机不再提供升力）}
+    \end{subfigure}
+
+    \caption{MuJoCo 仿真中无人机栖息任务全流程时间序列结果}
+    \label{fig:mujo_co_full_pipeline}
+\end{figure}
+
+\section{视觉伺服系统的实现}
+\subsection{视觉感知与相机几何标定管线}
+
+为保证视觉伺服系统中位姿估计与距离测量的精度，本文构建了从相机标定、畸变矫正到 AprilTag 位姿求解的完整视觉感知管线，其核心目标是在实际非理想成像条件下恢复近似针孔相机模型，从而为后续控制算法提供一致的几何测量基础。
+
+实际摄像头成像过程可在针孔模型基础上引入畸变项进行描述。设理想归一化坐标为 $(x, y)$，径向距离 $r^2 = x^2 + y^2$，则畸变后的归一化坐标 $(x_d, y_d)$ 可表示为：
+
 \begin{align}
-  a & = b + c + d + e \\
-    & = f + g
+r^2 &= x^2 + y^2,
 \end{align}
 
+\begin{align}
+x_d &= x \left(1 + k_1 r^2 + k_2 r^4 + k_3 r^6 \right) + 2p_1xy + p_2(r^2 + 2x^2),
+\end{align}
+
+\begin{align}
+y_d &= y \left(1 + k_1 r^2 + k_2 r^4 + k_3 r^6 \right) + p_1(r^2 + 2y^2) + 2p_2xy,
+\end{align}
+
+其中 $k_1, k_2, k_3$ 为径向畸变系数，$p_1, p_2$ 为切向畸变系数。相机内参矩阵 $\mathbf{K}$ 与畸变参数 $\mathbf{d}$ 通过多组棋盘格图像联合优化得到，其优化目标为最小化重投影误差：
+
+\begin{align}
+\min_{\mathbf{K}, \mathbf{d}, \mathbf{R}_i, \mathbf{t}_i}
+\sum_{i=1}^{N} \sum_{j=1}^{M}
+\left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{d}, \mathbf{R}_i \mathbf{P}_j + \mathbf{t}_i \right) \right\|^2,
+\end{align}
+
+其中 $\mathbf{P}_j$ 为棋盘格三维角点，$\mathbf{p}_{ij}$ 为其在图像平面中的观测坐标。
+
+在在线视觉处理阶段，本文采用 OpenCV 的 \texttt{cv2.undistort} 方法对输入图像进行去畸变处理。其本质是构建从畸变像素坐标 $(u_d, v_d)$ 到理想像素坐标 $(u, v)$ 的非线性映射关系：
+
+\begin{align}
+\begin{bmatrix}
+u \\
+v \\
+1
+\end{bmatrix}
+=
+\mathbf{K}
+\cdot
+\mathbf{D}^{-1}
+\cdot
+\mathbf{K}^{-1}
+\begin{bmatrix}
+u_d \\
+v_d \\
+1
+\end{bmatrix},
+\end{align}
+
+其中 $\mathbf{D}^{-1}$ 表示畸变模型的反向映射，其通常通过迭代数值方法近似求解。通过该过程，可以将原始图像恢复至近似理想针孔模型，从而消除由于镜头畸变引入的系统性几何误差。
+
+去畸变处理对于后续基于 AprilTag 的位姿估计具有关键作用。在未进行畸变矫正的情况下，图像坐标误差会通过透视投影模型非线性传播至位姿估计结果，从而引入系统性偏差，最终影响无人机的距离估计与控制稳定性。
+
+因此，本文将畸变矫正视为视觉伺服系统的前置必要步骤，使得后续基于 \texttt{solvePnP} 的位姿求解能够在一致的针孔相机假设下进行，从而提高整体测量精度与控制鲁棒性。
+
+\subsection{基于 AprilTag 的视觉测距方法}
+
+在本文的视觉伺服系统中，无人机与目标 AprilTag 之间的相对距离估计基于针孔相机模型与 PnP（Perspective-n-Point）求解实现。系统首先利用 AprilTag 四个角点的二维图像坐标与其对应的三维几何先验建立约束关系，并通过最小化重投影误差求解相机位姿。
+
+设 AprilTag 在世界坐标系中的三维角点为 $\mathbf{P}_i \in \mathbb{R}^3$，其在图像坐标系中的像素观测为 $\mathbf{p}_i \in \mathbb{R}^2$，则位姿估计问题可表示为：
+
+\begin{align}
+\min_{\mathbf{R}, \mathbf{t}} \sum_{i=1}^{4} \left\| \mathbf{p}_i - \pi\left( \mathbf{K} \left( \mathbf{R}\mathbf{P}_i + \mathbf{t} \right) \right) \right\|^2,
+\end{align}
+
+其中 $\mathbf{R} \in SO(3)$ 与 $\mathbf{t} \in \mathbb{R}^3$ 分别表示相机坐标系下目标的旋转和平移向量，$\mathbf{K}$ 为相机内参矩阵，$\pi(\cdot)$ 表示透视投影函数。
+
+在实际实现中，本文采用 OpenCV 的 \texttt{solvePnP} 算法直接求解 $\mathbf{R}, \mathbf{t}$，其中平移向量 $\mathbf{t}$ 在相机坐标系下满足：
+
+\begin{align}
+\mathbf{t} =
+\begin{bmatrix}
+t_x \\
+t_y \\
+t_z
+\end{bmatrix},
+\end{align}
+
+并且 $t_z$ 表示目标 AprilTag 在相机光轴方向上的深度距离。
+
+因此，无人机与 AprilTag 之间的相对距离被定义为：
+
+\begin{align}
+d = t_z.
+\end{align}
+
+在本文代码实现中，该距离量由 \texttt{tvec[2]} 直接获得，并作为视觉伺服控制中的纵向误差输入：
+
+\begin{align}
+e_d = d - d^\ast,
+\end{align}
+
+其中 $d^\ast$ 为期望工作距离，用于引导无人机进入黏附前的稳定接近区域。
+
+需要指出的是，该距离估计依赖于 AprilTag 的几何尺度 $s$（本文中 $s = 0.04\,\mathrm{m}$），其通过构造角点三维坐标约束引入：
+
+\begin{align}
+\mathbf{P}_i \in \left\{
+\left[-\frac{s}{2}, \frac{s}{2}, 0\right],
+\left[\frac{s}{2}, \frac{s}{2}, 0\right],
+\left[\frac{s}{2}, -\frac{s}{2}, 0\right],
+\left[-\frac{s}{2}, -\frac{s}{2}, 0\right]
+\right\}.
+\end{align}
+
+该方法在保证计算效率的同时，使得无人机能够在未知环境中仅依赖单目视觉实现稳定的相对距离估计与闭环控制。
+
+\subsection{AprilTag测量在平面与深度方向的可观测性差异分析}
+
+在基于单目视觉的 AprilTag 位姿估计问题中，不同状态自由度的可观测性存在显著不均衡性。实验结果表明，系统在图像平面方向（$x$-$y$）具有较高估计精度与收敛稳定性，而在深度方向（$z$）存在显著更大的估计误差与漂移现象。该特性本质上来源于单目投影几何下状态对观测的非均匀灵敏度分布。
+
+\subsubsection{观测模型与线性化}
+
+考虑针孔相机模型下的归一化成像关系：
+\begin{align}
+u = f_x \frac{X}{Z} + c_x, \quad v = f_y \frac{Y}{Z} + c_y,
+\end{align}
+
+将位姿参数 $\mathbf{x} = [X, Y, Z]^T$ 在当前估计点附近线性化，可得观测增量模型：
+\begin{align}
+\Delta \mathbf{p} \approx \mathbf{J}(\mathbf{x}) \Delta \mathbf{x},
+\end{align}
+
+其中 $\mathbf{J} \in \mathbb{R}^{2 \times 3}$ 为观测 Jacobian，其结构为：
+\begin{align}
+\mathbf{J} =
+\begin{bmatrix}
+\frac{f_x}{Z} & 0 & -\frac{f_x X}{Z^2} \\
+0 & \frac{f_y}{Z} & -\frac{f_y Y}{Z^2}
+\end{bmatrix}.
+\end{align}
+
+该结构直接揭示了三个状态方向对观测的不同影响强度。
+
+\subsubsection{平面方向的良好条件性}
+
+对于 $x$-$y$ 平面方向，其对应 Jacobian 子块为：
+\begin{align}
+\mathbf{J}_{xy} =
+\begin{bmatrix}
+\frac{f_x}{Z} & 0 \\
+0 & \frac{f_y}{Z}
+\end{bmatrix},
+\end{align}
+
+该子系统具有满秩结构，并且条件数为：
+\begin{align}
+\kappa(\mathbf{J}_{xy}) = \frac{\max(f_x, f_y)}{\min(f_x, f_y)},
+\end{align}
+
+在常规相机标定条件下，该值接近常数，因此 $x$-$y$ 方向在数值上表现良好。
+
+结合 AprilTag 提供的四角点冗余约束，实际优化问题中 $x$-$y$ 方向误差可通过多点几何平均显著抑制，从而表现出较高的估计精度与稳定性。
+
+\subsubsection{深度方向的弱可观测性与退化}
+
+相比之下，深度方向对应 Jacobian 列向量为：
+\begin{align}
+\mathbf{j}_z =
+\begin{bmatrix}
+-\frac{f_x X}{Z^2} \\
+-\frac{f_y Y}{Z^2}
+\end{bmatrix}.
+\end{align}
+
+可以观察到其具有以下两个关键特性：
+
+\begin{itemize}
+\item 尺度衰减性：$\|\mathbf{j}_z\| \propto \frac{1}{Z^2}$，导致远距离下深度灵敏度快速下降；
+\item 几何耦合性：$X,Y$ 项引入与平面状态的强耦合，使 $z$ 方向难以独立估计。
+\end{itemize}
+
+进一步考虑整体观测矩阵 $\mathbf{J}$ 的 Gram 矩阵：
+\begin{align}
+\mathbf{H} = \mathbf{J}^T \mathbf{J},
+\end{align}
+
+可以发现当 $Z$ 增大时，$\mathbf{H}$ 的最小特征值迅速衰减，从而导致：
+\begin{align}
+\kappa(\mathbf{H}) \rightarrow \infty,
+\end{align}
+
+即系统在深度方向逐渐进入病态估计区域。
+
+直观而言，不同的深度 $Z$ 可以产生几乎等价的像素重投影误差，使得优化目标在 $z$ 方向形成“平坦误差谷”，而在 $x$-$y$ 方向仍保持明显梯度。
+
+尽管 AprilTag 提供四点几何约束，但该约束本质上仅增强了平面内刚体结构一致性，并不能引入额外的视差信息。因此：
+
+\begin{align}
+\text{xy方向} &\rightarrow \text{几何冗余约束（strong constraint)} \\
+\text{z方向}  &\rightarrow \text{尺度恢复问题（scale ambiguity)}.
+\end{align}
+
+在本系统中（$640 \times 320$ 分辨率，$s=0.04\,\mathrm{m}$ Tag），AprilTag 在中远距离下像素覆盖率下降，使得深度估计进一步退化为“弱尺度观测问题”。
+
+综上所述，AprilTag 单目位姿估计在结构上呈现明显的非均匀可观测性：
+
+\begin{itemize}
+\item $x$-$y$ 平面方向：由满秩 Jacobian 子空间支撑，具有良好条件性与高稳定性；
+\item $z$ 深度方向：由尺度恢复驱动，Jacobian 衰减快且高度耦合，导致病态估计问题。
+\end{itemize}
+
+该性质在无人机栖息任务中体现为：横向与纵向对准过程具有较高精度，而距离收敛过程对观测噪声与尺度变化高度敏感，表现出类似“单目深度感知困难”的典型现象。这一现象的直观解释为，人类在“抓娃娃”时，即使有双目视觉提供深度信息，但仍然难以操作，通常会通过更换观测平面来获取更多的深度信息。
+
+\section{无人机实机控制器}
+
+为实现微型无人机在室内无定位环境中的自主飞行与栖息控制，本文设计了一套由飞行姿态控制器与视觉伺服控制器组成的分层控制架构。飞行姿态控制器部署于无人机飞控系统，负责姿态稳定与运动执行；视觉伺服控制器部署于地面站，通过接收机载摄像头图像实现目标识别、相对位姿估计与导航控制指令生成。
+
+系统采用分层控制架构，底层为姿态稳定控制器，保证无人机在外部扰动条件下的姿态稳定；上层为视觉伺服控制器，通过 AprilTag 目标识别与位姿估计实现无人机相对目标的自主导航。视觉控制器以较低频率运行，向姿态控制器提供参考控制量，构成典型的串级控制（cascade control）结构。本文无人机整机质量 $m = 58\ \mathrm{g}$，姿态控制频率 $f_a = 50\ \mathrm{Hz}$，视觉控制频率 $f_v = 25\ \mathrm{Hz}$，因此系统属于典型的多速率离散控制系统（multi-rate sampled-data system）。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width = \textwidth]{controller.png}
+  \caption{无人机控制器逻辑图}\label{Controller_logic}
+\end{figure}
 
 
-\section{数学定理}
+\subsection{无人机控制器原理}
 
-定理环境的格式可以使用 \pkg{amsthm} 或者 \pkg{ntheorem} 宏包配置。
-用户在导言区载入这两者之一后，模板会自动配置 \env{theorem}、\env{proof} 等环境。
+本文控制系统采用视觉外环与姿态内环相结合的层级控制结构，其核心思想在于将无人机自主飞行问题分解为不同时间尺度上的子问题：低频视觉系统负责目标定位与路径引导，高频姿态控制器负责飞行动力学稳定。系统控制链路可表示为：
+\begin{equation}
+    \text{视觉感知}
+    \rightarrow \text{目标位姿估计}
+    \rightarrow \text{导航控制律}
+    \rightarrow \text{姿态控制器}
+    \rightarrow \text{飞行动力学}
+\end{equation}
 
-\begin{theorem}[Lindeberg--Lévy 中心极限定理]
-  设随机变量 $X_1, X_2, \dots, X_n$ 独立同分布， 且具有期望 $\mu$ 和有限的方差 $\sigma^2 \ne 0$，
-  记 $\bar{X}_n = \frac{1}{n} \sum_{i+1}^n X_i$，则
-  \begin{equation}
-    \lim_{n \to \infty} P \left(\frac{\sqrt{n} \left( \bar{X}_n - \mu \right)}{\sigma} \le z \right) = \Phi(z),
-  \end{equation}
-  其中 $\Phi(z)$ 是标准正态分布的分布函数。
-\end{theorem}
-\begin{proof}
-  Trivial.
-\end{proof}
+视觉系统利用机载摄像头采集环境图像，经地面站识别 AprilTag 标签后估计目标相对位置，依据视觉误差生成滚转（roll）、俯仰（pitch）及油门（throttle）控制指令。姿态控制器进一步将姿态参考量转换为角速度与电机推力控制量，实现飞行动力学闭环稳定。
 
-同时模板还提供了 \env{assumption}、\env{definition}、\env{proposition}、
-\env{lemma}、\env{theorem}、\env{axiom}、\env{corollary}、\env{exercise}、
-\env{example}、\env{remar}、\env{problem}、\env{conjecture} 这些相关的环境。
+对于四旋翼无人机，其刚体姿态动力学方程为
+\begin{equation}
+    J\dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times J\boldsymbol{\omega} = \boldsymbol{\tau}
+\end{equation}
+
+其中 $\boldsymbol{\omega} = [p,\,q,\,r]^T$ 为机体系角速度向量，$\boldsymbol{\tau} = [\tau_\phi,\,\tau_\theta,\,\tau_\psi]^T$ 为姿态控制力矩，$J$ 为机体惯性矩阵。依据装配模型计算结果，本文无人机在质心坐标系下的惯性矩阵为
+\begin{equation}
+    J = 10^{-6}
+    \begin{bmatrix}
+        17.498 & 0.113  & 6.229  \\
+        0.113  & 25.965 & 0.157  \\
+        6.229  & 0.157  & 16.907
+    \end{bmatrix}
+    \ \mathrm{kg \cdot m^2}
+\end{equation}
+
+考虑到微型四旋翼在自主附着过程中飞行速度较低、姿态变化较小，采用小角度近似 $\sin\phi \approx \phi$，$\sin\theta \approx \theta$，$\cos\phi \approx 1$，$\cos\theta \approx 1$。在此条件下，姿态运动可近似解耦，忽略高阶耦合项 $\boldsymbol{\omega} \times J\boldsymbol{\omega}$，系统线性化为三个相互独立的二阶积分方程：
+\begin{align}
+    J_x \dot{p} &= \tau_\phi   \\
+    J_y \dot{q} &= \tau_\theta \\
+    J_z \dot{r} &= \tau_\psi
+\end{align}
+
+其中各轴转动惯量取惯性矩阵对角元素近似值：$J_x = 1.75 \times 10^{-5}\ \mathrm{kg \cdot m^2}$，$J_y = 2.60 \times 10^{-5}\ \mathrm{kg \cdot m^2}$，$J_z = 1.69 \times 10^{-5}\ \mathrm{kg \cdot m^2}$。上述模型表明，姿态动力学在小角度邻域内可视为三个独立的双积分系统，从而能够采用串级 PID 控制器进行稳定控制。
+
+\subsection{无人机姿态控制器}
+
+为提高无人机飞行稳定性与抗扰能力，本文采用双层 PID 串级控制结构（cascaded PID controller），外环用于姿态角控制，内环用于角速度控制。由于飞行姿态变化速度快于位置变化，采用时间尺度分离（time-scale separation）思想，将姿态稳定问题分解为角度控制与角速度控制两个层级。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width = \textwidth]{PID.png}
+  \caption{双层PID控制系统框图}\label{PID_controller}
+\end{figure}
+
+设无人机姿态角 $\boldsymbol{\eta} = [\phi,\,\theta,\,\psi]^T$ 分别表示滚转角、俯仰角及偏航角。外环姿态误差定义为
+\begin{equation}
+    \mathbf{e}_\eta(k) = \boldsymbol{\eta}_d(k) - \boldsymbol{\eta}(k)
+\end{equation}
+
+其中 $\boldsymbol{\eta}_d$ 为期望姿态角。外环离散 PID 控制律为
+\begin{equation}
+    \boldsymbol{\omega}_d(k) = K_{p\eta}\,\mathbf{e}_\eta(k)
+    + K_{i\eta}\sum_{i=0}^{k}\mathbf{e}_\eta(i)\,\Delta t
+    + K_{d\eta}\,\frac{\mathbf{e}_\eta(k) - \mathbf{e}_\eta(k-1)}{\Delta t}
+\end{equation}
+
+其中 $\Delta t = 0.02\ \mathrm{s}$ 对应 $50\ \mathrm{Hz}$ 控制周期，外环输出期望角速度 $\boldsymbol{\omega}_d = [p_d,\,q_d,\,r_d]^T$。
+
+内环角速度误差定义为 $\mathbf{e}_\omega(k) = \boldsymbol{\omega}_d(k) - \boldsymbol{\omega}(k)$，内环 PID 控制律为
+\begin{equation}
+    \mathbf{u}(k) = K_{p\omega}\,\mathbf{e}_\omega(k)
+    + K_{i\omega}\sum_{i=0}^{k}\mathbf{e}_\omega(i)\,\Delta t
+    + K_{d\omega}\,\frac{\mathbf{e}_\omega(k) - \mathbf{e}_\omega(k-1)}{\Delta t}
+\end{equation}
+其中 $\mathbf{u} = [u_\phi,\,u_\theta,\,u_\psi]^T$ 为姿态力矩控制输入。依据标准四旋翼模型，控制力矩与各电机推力 $F_i$ 的关系为
+\begin{align}
+    \tau_\phi   &= l(F_2 - F_4)         \\
+    \tau_\theta &= l(F_3 - F_1)         \\
+    \tau_\psi   &= \sum_{i=1}^{4}\tau_i
+\end{align}
+
+其中 $l$ 为机臂长度，$\tau_i$ 为各电机反扭矩。
+
+\subsubsection{姿态控制器稳定性分析}
+
+本节在小角度线性化框架下，对双层串级 PID 姿态控制器的局部渐近稳定性给出严格证明。分析以滚转轴为代表进行，俯仰轴与偏航轴结论完全对称。
+
+考虑小角度运行条件，即姿态角始终满足 $\boldsymbol{\eta}(t) \in \mathcal{D} \triangleq \{\boldsymbol{\eta} \in \mathbb{R}^3 \mid \|\boldsymbol{\eta}\| \leq \delta\}$（$\delta > 0$ 充分小），使得小角度线性化成立，非线性耦合项 $\boldsymbol{\omega} \times J\boldsymbol{\omega}$ 可忽略不计。在此条件下，令 $e_\omega \triangleq p_d - p$ 为角速度跟踪误差，$\xi_\omega \triangleq \int_0^t e_\omega\,\mathrm{d}\tau$ 为对应积分状态，定义内环误差状态向量 $\mathbf{z} \triangleq [e_\omega,\;\dot{e}_\omega,\;\xi_\omega]^T \in \mathbb{R}^3$。由于内环带宽 $\omega_{bw,\omega}$ 远高于外环带宽 $\omega_{bw,\eta}$，参考信号 $p_d$ 在内环时间尺度上缓变，即 $\dot{p}_d \approx 0$，内环闭环误差动力学写为
+\begin{equation}
+    \dot{\mathbf{z}} = A_\omega\,\mathbf{z}, \qquad
+    A_\omega \triangleq
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        -K_{p\omega}/J_x & -K_{d\omega}/J_x & -K_{i\omega}/J_x \\
+        1 & 0 & 0
+    \end{bmatrix}
+    \label{eq:inner_dynamics}
+\end{equation}
+
+内环渐近稳定性：内环误差动力学~\eqref{eq:inner_dynamics} 在原点处渐近稳定，当且仅当
+\begin{equation}
+    K_{p\omega} > 0,\quad K_{i\omega} > 0,\quad K_{d\omega} > 0,\quad K_{d\omega}\,K_{p\omega} > J_x\,K_{i\omega}
+    \label{eq:hurwitz_inner}
+\end{equation}
+
+$A_\omega$ 的特征多项式为
+\begin{equation}
+    p_\omega(s) = s^3 + \frac{K_{d\omega}}{J_x}\,s^2 + \frac{K_{p\omega}}{J_x}\,s + \frac{K_{i\omega}}{J_x}
+\end{equation}
+
+对 $p_\omega(s)$ 应用 Routh--Hurwitz 判据，其所有根具有严格负实部的充要条件恰为式~\eqref{eq:hurwitz_inner}，故 $A_\omega$ Hurwitz 稳定，误差动力学~\eqref{eq:inner_dynamics} 在原点处渐近稳定。
+
+类似地，令 $e_\eta \triangleq \phi_d - \phi$ 为姿态跟踪误差，$\xi_\eta \triangleq \int_0^t e_\eta\,\mathrm{d}\tau$ 为积分状态，定义外环误差状态向量 $\mathbf{w} \triangleq [e_\eta,\;\dot{e}_\eta,\;\xi_\eta]^T \in \mathbb{R}^3$。外环 PID 控制器生成角速度参考量 $p_d = K_{p\eta}\,e_\eta + K_{i\eta}\,\xi_\eta + K_{d\eta}\,\dot{e}_\eta$。由于 $\dot{e}_\eta = \dot{\phi}_d - p$，引入内环跟踪误差 $\tilde{p} \triangleq p_d - p$，外环误差动力学为
+\begin{equation}
+    \dot{\mathbf{w}} = A_\eta\,\mathbf{w} + B_\eta\,\tilde{p},\qquad
+    A_\eta \triangleq
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        -K_{p\eta} & -K_{d\eta} & -K_{i\eta} \\
+        1 & 0 & 0
+    \end{bmatrix},\quad
+    B_\eta \triangleq
+    \begin{bmatrix}1\\0\\0\end{bmatrix}
+    \label{eq:outer_dynamics}
+\end{equation}
+
+外环标称渐近稳定性：外环标称动力学（$\tilde{p} \equiv 0$）在原点处渐近稳定，当且仅当
+\begin{equation}
+    K_{p\eta} > 0,\quad K_{i\eta} > 0,\quad K_{d\eta} > 0,\quad K_{d\eta}\,K_{p\eta} > K_{i\eta}
+    \label{eq:hurwitz_outer}
+\end{equation}
+
+注意条件~\eqref{eq:hurwitz_outer} 中不含 $J_x$，原因在于外环输出为角速度参考量而非控制力矩，$J_x$ 已被内环增益设计所吸收。
+
+$A_\eta$ 的特征多项式为 $p_\eta(s) = s^3 + K_{d\eta}\,s^2 + K_{p\eta}\,s + K_{i\eta}$，由 Routh--Hurwitz 判据直接得出式~\eqref{eq:hurwitz_outer}。
+
+串级控制器局部渐近稳定性：若 PID 增益满足条件~\eqref{eq:hurwitz_inner} 与~\eqref{eq:hurwitz_outer}，则对任意 $Q_\eta,\,Q_\omega \succ 0$，存在常数 $c^* > 0$，使得对所有 $c > c^*$，串级系统~\eqref{eq:inner_dynamics}--\eqref{eq:outer_dynamics} 的平衡点 $(\mathbf{w},\mathbf{z}) = \mathbf{0}$ 在区域 $\mathcal{D}$ 内局部渐近稳定。
+
+由串级控制器局部渐近稳定性知 $A_\omega$ 与 $A_\eta$ 均 Hurwitz 稳定，故对任意 $Q_\omega,\,Q_\eta \succ 0$，存在唯一正定矩阵 $P_\omega,\,P_\eta \succ 0$ 分别满足连续时间 Lyapunov 方程
+\begin{align}
+    A_\omega^T P_\omega + P_\omega A_\omega &= -Q_\omega \label{eq:lyap_inner} \\
+    A_\eta^T  P_\eta  + P_\eta  A_\eta    &= -Q_\eta   \label{eq:lyap_outer}
+\end{align}
+
+构造复合 Lyapunov 函数
+\begin{equation}
+    V(\mathbf{w},\mathbf{z}) \triangleq \mathbf{w}^T P_\eta\,\mathbf{w} + c\,\mathbf{z}^T P_\omega\,\mathbf{z}
+    \label{eq:lyap_composite}
+\end{equation}
+该函数在 $(\mathbf{w},\mathbf{z})$ 上正定且径向无界。沿系统~\eqref{eq:inner_dynamics}--\eqref{eq:outer_dynamics} 的轨迹对 $V$ 求时间导数，代入式~\eqref{eq:lyap_inner}--\eqref{eq:lyap_outer}，得
+\begin{equation}
+    \dot{V} = -\mathbf{w}^T Q_\eta\,\mathbf{w} - c\,\mathbf{z}^T Q_\omega\,\mathbf{z} + 2\,\mathbf{w}^T P_\eta B_\eta\,\tilde{p}
+    \label{eq:Vdot_expanded}
+\end{equation}
+
+注意到 $\tilde{p} = e_\omega$ 为状态 $\mathbf{z}$ 的第一个分量，故 $|\tilde{p}| \leq \|\mathbf{z}\|$。对交叉项应用 Young 不等式，对任意 $\varepsilon > 0$ 有
+\begin{equation}
+    2\,\mathbf{w}^T P_\eta B_\eta\,\tilde{p}
+    \leq 2\,\|P_\eta B_\eta\|\,\|\mathbf{w}\|\,\|\mathbf{z}\|
+    \leq \varepsilon\,\|P_\eta B_\eta\|^2\,\|\mathbf{w}\|^2 + \frac{1}{\varepsilon}\,\|\mathbf{z}\|^2
+\end{equation}
+
+代入式~\eqref{eq:Vdot_expanded}，并利用 $\mathbf{x}^T Q\,\mathbf{x} \geq \lambda_{\min}(Q)\|\mathbf{x}\|^2$，得
+\begin{equation}
+    \dot{V} \leq
+    -\Bigl(\lambda_{\min}(Q_\eta) - \varepsilon\,\|P_\eta B_\eta\|^2\Bigr)\|\mathbf{w}\|^2
+    -\Bigl(c\,\lambda_{\min}(Q_\omega) - \tfrac{1}{\varepsilon}\Bigr)\|\mathbf{z}\|^2
+\end{equation}
+
+由于 $\lambda_{\min}(Q_\eta) > 0$ 且 $\|P_\eta B_\eta\| > 0$，取
+\begin{equation}
+    \varepsilon \in \left(0,\;\frac{\lambda_{\min}(Q_\eta)}{\|P_\eta B_\eta\|^2}\right),\qquad
+    c^* \triangleq \frac{1}{\varepsilon\,\lambda_{\min}(Q_\omega)}
+    \label{eq:param_choice}
+\end{equation}
+
+则对任意 $c > c^*$，令 $\lambda_1 \triangleq \lambda_{\min}(Q_\eta) - \varepsilon\,\|P_\eta B_\eta\|^2 > 0$ 及 $\lambda_2 \triangleq c\,\lambda_{\min}(Q_\omega) - 1/\varepsilon > 0$，有
+\begin{equation}
+    \dot{V} \leq -\lambda_1\,\|\mathbf{w}\|^2 - \lambda_2\,\|\mathbf{z}\|^2 < 0,\qquad \forall\,(\mathbf{w},\mathbf{z}) \neq \mathbf{0}
+\end{equation}
+
+$\dot{V}$ 负定，由 Lyapunov 渐近稳定性定理知平衡点 $(\mathbf{w},\mathbf{z}) = \mathbf{0}$ 渐近稳定，吸引域包含于 $\mathcal{D}$。由于三轴在小角度条件下相互解耦，上述结论对滚转、俯仰、偏航三轴独立成立，双层串级 PID 控制器整体在 $\mathcal{D}$ 内局部渐近稳定。
+
+离散实现的稳定性保持：姿态控制器以采样周期 $T_a = 0.02\ \mathrm{s}$ 离散实现。对连续闭环矩阵 $A_c$（$A_\omega$ 或 $A_\eta$）施以零阶保持离散化，得 $A_d = e^{A_c T_a}$。由谱映射定理，$|\lambda_i(A_d)| = e^{\mathrm{Re}(\lambda_i(A_c))\,T_a}$；由于 $A_c$ Hurwitz 稳定，$\mathrm{Re}(\lambda_i(A_c)) < 0$，故 $\rho(A_d) < 1$，即 $A_d$ 全部特征值严格位于单位圆内。等价地，对任意 $Q_d \succ 0$，离散 Lyapunov 方程 $A_d^T P_d A_d - P_d = -Q_d$ 存在唯一正定解 $P_d \succ 0$，确认离散闭环系统渐近稳定。本文姿态控制频率 $50\ \mathrm{Hz}$ 较无人机姿态动力学主频（通常不超过 $5\ \mathrm{Hz}$）高出一个量级，采样引入的相位裕量损失可忽略，串级控制器局部渐近的稳定性结论在离散实现下得以保持。
+
+积分环节引入的内部状态在执行器饱和或大姿态角扰动时可能导致积分饱和（integral windup）问题，破坏执行器不饱和的前提条件。本文系统通过限制飞行姿态范围，确保无人机始终在小角度邻域 $\mathcal{D}$ 内运行，从而规避积分累积效应，保证串级控制器局部渐近稳定性的适用条件持续成立。
+
+\subsection{无人机视觉伺服控制器}
+
+为实现无人机自主接近目标并完成附着控制，本文采用基于 AprilTag 目标检测的视觉伺服控制方法（visual servoing）。系统通过机载摄像头实时获取环境图像，经地面站识别目标后生成姿态控制指令，实现目标跟踪与自主导航。视觉控制器工作频率 $f_v = 25\ \mathrm{Hz}$ 低于姿态控制器，整体系统构成典型多速率串级控制结构，视觉控制器作为慢环（slow loop），姿态控制器作为快环（fast loop）。
+
+设图像坐标系中目标中心位置为 $(u_t,\,v_t)$，图像中心位置为 $(u_c,\,v_c)$，则归一化图像误差定义为
+\begin{align}
+    e_x &=  \frac{u_t - u_c}{u_c} \\[4pt]
+    e_y &= -\frac{v_t - v_c}{v_c}
+\end{align}
+其中横向误差 $e_x$ 用于控制滚转角，纵向误差 $e_y$ 用于控制俯仰角。
+
+为估计无人机与目标之间的相对距离，本文利用 AprilTag 已知尺寸进行位姿求解。设标签边长为 $L$，其角点三维坐标满足 $\mathbf{P}_i = [x_i,\,y_i,\,0]^T$（$z_i = 0$）。相机成像过程满足针孔投影模型
+\begin{equation}
+    s
+    \begin{bmatrix}u\\v\\1\end{bmatrix}
+    = K\begin{bmatrix}R \mid \mathbf{t}\end{bmatrix}
+    \begin{bmatrix}X\\Y\\Z\\1\end{bmatrix}
+\end{equation}
+
+其中 $K$ 为相机内参矩阵，$R$ 为旋转矩阵，$\mathbf{t} = [t_x,\,t_y,\,t_z]^T$ 为平移向量。通过求解 Perspective-$n$-Point（PnP）问题可得平移分量 $t_z$，即目标深度估计值，从而距离误差定义为
+\begin{equation}
+    e_d = t_z - d^*
+\end{equation}
+
+其中 $d^*$ 为目标附着距离。综合三个误差分量，视觉误差向量定义为
+\begin{equation}
+    \mathbf{e}_v = [e_x,\;e_y,\;e_d]^T
+\end{equation}
+
+视觉控制律采用三轴独立 PID 结构，各通道控制律分别为
+\begin{align}
+    u_r(k) &= K_{pr}\,e_x(k)
+             + K_{ir}\sum_{i=0}^{k}e_x(i)\,T_v
+             + K_{dr}\,\frac{e_x(k)-e_x(k-1)}{T_v} \\[4pt]
+    u_p(k) &= K_{pp}\,e_y(k)
+             + K_{ip}\sum_{i=0}^{k}e_y(i)\,T_v
+             + K_{dp}\,\frac{e_y(k)-e_y(k-1)}{T_v} \\[4pt]
+    u_t(k) &= K_{pt}\,e_d(k)
+             + K_{it}\sum_{i=0}^{k}e_d(i)\,T_v
+             + K_{dt}\,\frac{e_d(k)-e_d(k-1)}{T_v}
+\end{align}
+
+其中 $T_v = 0.04\ \mathrm{s}$ 对应 $25\ \mathrm{Hz}$ 视觉控制周期。视觉控制输出 $\mathbf{u}_v = [u_r,\,u_p,\,u_t]^T$ 分别映射至滚转、俯仰及油门通道，作为姿态控制器的外环参考输入。
+
+在视觉控制律的实现中，为便于分析控制器在极限情况下的可行性，进一步假设无人机姿态通道具备理想瞬时响应特性，即控制输入 $u_r,u_p,u_t$ 能够直接映射为对应姿态角变化量，从而可将系统近似为单位增益静态通道：
+\begin{equation}
+\phi \approx u_r,\qquad
+\theta \approx u_p,\qquad
+T \approx u_t
+\end{equation}
+
+在该假设下，各通道闭环误差动力学可统一写为 PD 形式：
+\begin{equation}
+e_i(k) = r_i(k) - x_i(k),
+\end{equation}
+\begin{align}
+u_i(k)
+&= K_{p,i} e_i(k)
+* K_{i,i} \sum_{j=0}^{k} e_i(j) T_v
+* K_{d,i} \frac{e_i(k)-e_i(k-1)}{T_v}
+\end{align}
+
+由于视觉系统更新频率较低（$f_v=25,\mathrm{Hz}$），且在附着任务中主要依赖短时误差收敛能力，因此首先考察 PD 主导项（忽略积分作用）下的瞬态稳定性，即：
+\begin{equation}
+u_i(k)
+\approx
+K_{p,i} e_i(k)
++
+K_{d,i} \frac{e_i(k)-e_i(k-1)}{T_v}
+\end{equation}
+
+将系统进一步近似为连续形式，可得到标准二阶误差动力学：
+\begin{equation}
+\ddot e_i + \frac{K_{d,i}}{T_v}\dot e_i + \frac{K_{p,i}}{T_v} e_i = 0
+\end{equation}
+
+其特征方程为：
+\begin{equation}
+s^2 + \frac{K_{d,i}}{T_v}s + \frac{K_{p,i}}{T_v} = 0
+\end{equation}
+
+因此系统渐近稳定的充要条件为：
+\begin{align}
+K_{p,i} &> 0, K_{d,i} &> 0.
+\end{align}
+
+在本文参数设置下，控制增益为：
+\begin{align}
+\text{THRO:}\quad &K_p = 0.45,\quad K_i = 0.120,\quad K_d = 0.11
+\end{align}
+\begin{align}
+\text{PITCH:}\quad &K_p = 0.30,\quad K_i = 0,\quad K_d = 0.20
+\end{align}
+\begin{align}
+\text{ROLL:}\quad &K_p = 0.30,\quad K_i = 0,\quad K_d = 0.20
+\end{align}
+
+代入视觉采样周期 $T_v = 0.04,\mathrm{s}$，可得各通道等效闭环特征多项式：
+
+\begin{align}
+\text{THRO:}\quad
+s^2 + \frac{0.11}{0.04}s + \frac{0.45}{0.04}
+&= s^2 + 2.75 s + 11.25
+\end{align}
+\begin{align}
+\text{PITCH:}\quad
+s^2 + \frac{0.20}{0.04}s + \frac{0.30}{0.04}
+&= s^2 + 5.00 s + 7.50
+\end{align}
+\begin{align}
+\text{ROLL:}\quad
+s^2 + \frac{0.20}{0.04}s + \frac{0.30}{0.04}
+&= s^2 + 5.00 s + 7.50
+\end{align}
+
+上述三个二阶系统均满足 Hurwitz 判据（系数均为正，且阻尼项显著大于零），因此在理想瞬时响应假设下，各通道误差动力学均为严格稳定系统，且阻尼比满足：
+\begin{equation}
+\zeta = \frac{K_{d,i}}{2\sqrt{K_{p,i}T_v}} > 0
+\end{equation}
+
+由此可知，该 PD 参数组合在视觉伺服慢环更新频率下能够保证误差单调衰减，不存在振荡发散趋势，从而在控制层面验证了参数设计的基本可行性。
