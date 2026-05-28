@@ -1,60 +1,232 @@
 % !TeX root = ../thuthesis-example.tex
 
-\chapter{补充内容}
 
-附录是与论文内容密切相关、但编入正文又影响整篇论文编排的条理和逻辑性的资料，例如某些重要的数据表格、计算程序、统计表等，是论文主体的补充内容，可根据需要设置。
+\chapter{本文编写的核心程序代码}
+\begin{lstlisting}[caption={交互式相机标定流程},
+label={lst:camera_calibration}]
 
-附录中的图、表、数学表达式、参考文献等另行编序号，与正文分开，一律用阿拉伯数字编码，
-但在数码前冠以附录的序号，例如“图~\ref{fig:appendix-figure}”，
-“表~\ref{tab:appendix-table}”，“式\eqref{eq:appendix-equation}”等。
+Algorithm: Interactive Camera Calibration Pipeline
+
+Input:
+camera index c
+chessboard pattern size (W,H)
+
+Output:
+intrinsic matrix K
+distortion coefficients d
+
+Initialize GUI interface
+Create image storage directory
+
+Set system states:
+camera_opened <- False
+undistort_mode <- False
+K <- empty
+d <- empty
+
+while application is running do
+
+```
+if user requests "Open Camera" then
+    Open camera stream using c
+    Start frame acquisition thread
+    Enable capture and calibration controls
+end if
+
+if camera stream available then
+    Acquire newest frame
+
+    if undistort_mode = True
+    and calibration parameters exist then
+        Apply image undistortion
+    end if
+
+    Render frame to GUI
+end if
+
+if user requests image capture then
+    Save current frame
+    Refresh captured image list
+end if
+
+if user selects an image then
+    Load selected image
+    Display image preview
+end if
+
+if user requests chessboard detection then
+    Load latest captured image
+    Convert image to grayscale
+    Detect chessboard corners using (W,H)
+
+    if corners detected then
+        Refine corners to subpixel precision
+        Draw chessboard visualization
+        Save visualization result
+    else
+        Report detection failure
+    end if
+end if
+
+if user requests camera calibration then
+
+    Construct chessboard object points
+
+    Initialize:
+        O <- empty object points
+        I <- empty image points
+
+    for each captured image do
+        Convert image to grayscale
+        Detect chessboard corners
+
+        if corners detected then
+            Refine corner positions
+            Append object points to O
+            Append image points to I
+        end if
+    end for
+
+    if number of valid images < 3 then
+        Report insufficient calibration data
+    else
+        (K,d) <- CalibrateCamera(O,I)
+        Compute reprojection error
+        Display calibration quality metrics
+    end if
+end if
+
+if user requests parameter saving then
+    Save K, d, and image size
+end if
+
+if user requests parameter loading then
+    Load calibration parameters
+    Enable undistortion preview
+end if
+
+if user toggles undistortion preview then
+    Toggle undistort_mode
+end if
+```
+
+end while
+
+Release camera resource
+Terminate application
+
+\end{lstlisting}
 
 
-\section{插图}
+\begin{lstlisting}[caption={笔记本电脑接收图传、发送控制信号核心代码},
+label={lst:ground_station_control}]
 
-% 附录中的插图示例（图~\ref{fig:appendix-figure}）。
+Algorithm: Ground Control Interface for CRSF-Based UAV Teleoperation
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.6\linewidth]{example-image-a.pdf}
-  \caption{附录中的图片示例}
-  \label{fig:appendix-figure}
-\end{figure}
+Input:
+serial port P
+baudrate B
+camera index c
 
+Output:
+continuous CRSF command transmission
+visual feedback for teleoperation
 
-\section{表格}
+Initialize GUI interface
+Initialize serial communication (P,B)
+Open camera stream using c
 
-% 附录中的表格示例（表~\ref{tab:appendix-table}）。
+Initialize slider states:
+(roll, pitch, throttle, yaw)
+<- (0, 0, -1, 0)
 
-\begin{table}
-  \centering
-  \caption{附录中的表格示例}
-  \begin{tabular}{ll}
-    \toprule
-    文件名          & 描述                         \\
-    \midrule
-    thuthesis.dtx   & 模板的源文件，包括文档和注释 \\
-    thuthesis.cls   & 模板文件                     \\
-    thuthesis-*.bst & BibTeX 参考文献表样式文件    \\
-    thuthesis-*.bbx & BibLaTeX 参考文献表样式文件  \\
-    thuthesis-*.cbx & BibLaTeX 引用样式文件        \\
-    \bottomrule
-  \end{tabular}
-  \label{tab:appendix-table}
-\end{table}
+Initialize system states:
+armed <- False
+arm_request <- False
+angle_mode <- False
 
+while system is running do
 
-\section{数学表达式}
+```
+Poll keyboard and mouse events
 
-% 附录中的数学表达式示例（式\eqref{eq:appendix-equation}）。
-\begin{equation}
-  \frac{1}{2 \uppi \symup{i}} \int_\gamma f = \sum_{k=1}^m n(\gamma; a_k) \mathscr{R}(f; a_k)
-  \label{eq:appendix-equation}
-\end{equation}
+if camera switch key pressed then
+    Release current camera stream
+    Open selected camera
+end if
 
+if user clicks ARM button then
+    if armed = True then
+        arm_request <- False
+    else if throttle is sufficiently low then
+        arm_request <- True
+    end if
+end if
 
-\section{文献引用}
+if user clicks ANGLE button then
+    Toggle angle_mode
+end if
 
-附录\cite{dupont1974bone}中的参考文献引用\cite{zhengkaiqing1987}示例
-\cite{dupont1974bone,zhengkaiqing1987}。
+for each control slider do
+    if slider is dragged then
+        Update normalized control value
+        Clamp value into interval [-1,1]
+    end if
+end for
 
-\printbibliography
+for roll, pitch, yaw channels do
+    if slider is not dragged then
+        Gradually decay command toward zero
+    end if
+end for
+
+Convert normalized commands into CRSF channels:
+    ch[0:3] <- MapToCRSF(
+                    roll,
+                    pitch,
+                    throttle,
+                    yaw)
+
+Determine throttle safety state:
+    throttle_low <- (ch[2] <= T_arm)
+
+if arm_request = True
+and throttle_low = True then
+    armed <- True
+else if arm_request = False then
+    armed <- False
+end if
+
+Update auxiliary switch channels:
+
+    ch[5] <- MID if armed
+             else LOW
+
+    ch[6] <- MID if angle_mode
+             else LOW
+
+if transmission period elapsed then
+    Pack RC channels into CRSF payload
+    Compute CRC checksum
+    Send CRSF frame through serial port
+end if
+
+if camera frame available then
+    Acquire image frame
+    Resize and convert image format
+    Render image onto GUI
+end if
+
+Render sliders, buttons,
+channel values and status messages
+
+Refresh GUI display
+```
+
+end while
+
+Release camera resource
+Release serial resource
+Terminate application
+
+\end{lstlisting}

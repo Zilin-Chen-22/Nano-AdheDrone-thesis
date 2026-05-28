@@ -8,6 +8,7 @@
 \citation{nonami2025overview}
 \citation{COLOMINA201479}
 \citation{kim2018drone}
+\citation{schmidt2016stability}
 \HyPL@Entry{12<</S/D>>}
 \pp@pagectr{footnote}{1}{13}{1}
 \@writefile{toc}{\contentsline {chapter}{\numberline {第1章}绪论}{1}{chapter.1}\protected@file@percent }
@@ -68,7 +69,7 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {第2章}无人机及栖息装置系统搭建}{11}{chapter.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}无人机系统搭建}{11}{section.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}无人机设计原则及挑战}{11}{subsection.2.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}无人机机械结构设计}{11}{subsection.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}无人机本体机械结构设计}{11}{subsection.2.1.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces 三种无人机基座设计应力图}}{12}{figure.caption.25}\protected@file@percent }
 \newlabel{fig:base_design}{{2.1}{12}{三种无人机基座设计应力图}{figure.caption.25}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces 系统通信设计}}{13}{figure.caption.26}\protected@file@percent }
@@ -76,94 +77,89 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces 无人机实机图}}{14}{figure.caption.28}\protected@file@percent }
 \newlabel{fig:drone_design}{{2.4}{14}{无人机实机图}{figure.caption.28}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces 全油门推力测试图}}{14}{figure.caption.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}栖息装置系统集成}{14}{section.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}柔性黏附结构 VSERF 的制备}{14}{subsection.2.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces VSERF粘附力随电压变化曲线}}{15}{figure.caption.30}\protected@file@percent }
-\newlabel{VSERF_Force}{{2.6}{15}{VSERF粘附力随电压变化曲线}{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}VSERF电路实现}{15}{subsection.2.2.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Input--output voltage relationship}}{16}{table.caption.31}\protected@file@percent }
-\newlabel{tab:voltage_relation}{{2.1}{16}{Input--output voltage relationship}{table.caption.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces 高压发生器输入-输出响应曲线}}{16}{figure.caption.32}\protected@file@percent }
-\newlabel{HVPS_Curve}{{2.7}{16}{高压发生器输入-输出响应曲线}{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces 电流变液相关电路}}{17}{figure.caption.33}\protected@file@percent }
-\newlabel{VSERF_Circuit}{{2.8}{17}{电流变液相关电路}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}地面站装置设计}{18}{section.2.3}\protected@file@percent }
-\pp@pagectr{footnote}{3}{31}{19}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第3章}无人机控制系统构建}{19}{chapter.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}仿真环境测试}{19}{section.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}仿真平台搭建}{19}{subsection.3.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 仿真场景}}{19}{figure.caption.34}\protected@file@percent }
-\newlabel{sim_setup}{{3.1}{19}{仿真场景}{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}仿真结果}{21}{subsection.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}视觉伺服系统的实现}{21}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}视觉感知与相机几何标定管线}{21}{subsection.3.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces MuJoCo 仿真中无人机栖息任务全流程时间序列结果}}{22}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:mujo_co_full_pipeline}{{3.2}{22}{MuJoCo 仿真中无人机栖息任务全流程时间序列结果}{figure.caption.35}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}基于 AprilTag 的视觉测距方法}{24}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}AprilTag测量在平面与深度方向的可观测性差异分析}{25}{subsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.1}观测模型与线性化}{25}{subsubsection.3.2.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.2}平面方向的良好条件性}{25}{subsubsection.3.2.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.3}深度方向的弱可观测性与退化}{26}{subsubsection.3.2.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}无人机实机控制器}{27}{section.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces 无人机控制器逻辑图}}{27}{figure.caption.36}\protected@file@percent }
-\newlabel{Controller_logic}{{3.3}{27}{无人机控制器逻辑图}{figure.caption.36}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}无人机控制器原理}{27}{subsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}无人机姿态控制器}{28}{subsection.3.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces 双层PID控制系统框图}}{29}{figure.caption.37}\protected@file@percent }
-\newlabel{PID_controller}{{3.4}{29}{双层PID控制系统框图}{figure.caption.37}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.1}姿态控制器稳定性分析}{30}{subsubsection.3.3.2.1}\protected@file@percent }
-\newlabel{eq:inner_dynamics}{{3.33}{30}{姿态控制器稳定性分析}{equation.3.3.33}{}}
-\newlabel{eq:hurwitz_inner}{{3.34}{30}{姿态控制器稳定性分析}{equation.3.3.34}{}}
-\newlabel{eq:outer_dynamics}{{3.36}{30}{姿态控制器稳定性分析}{equation.3.3.36}{}}
-\newlabel{eq:hurwitz_outer}{{3.37}{30}{姿态控制器稳定性分析}{equation.3.3.37}{}}
-\newlabel{eq:lyap_inner}{{3.38}{31}{姿态控制器稳定性分析}{equation.3.3.38}{}}
-\newlabel{eq:lyap_outer}{{3.39}{31}{姿态控制器稳定性分析}{equation.3.3.39}{}}
-\newlabel{eq:lyap_composite}{{3.40}{31}{姿态控制器稳定性分析}{equation.3.3.40}{}}
-\newlabel{eq:Vdot_expanded}{{3.41}{31}{姿态控制器稳定性分析}{equation.3.3.41}{}}
-\newlabel{eq:param_choice}{{3.44}{31}{姿态控制器稳定性分析}{equation.3.3.44}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}无人机视觉伺服控制器}{32}{subsection.3.3.3}\protected@file@percent }
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994,zhukezhen1973}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994,zhukezhen1973}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994}
-\citation{zhangkun1994,zhukezhen1973}
-\citation{zhangkun1994,zhukezhen1973,dupont1974bone,zhengkaiqing1987,jiangxizhou1980,jianduju1994,merkt1995rotational,mellinger1996laser,bixon1996dynamics,mahui1995,carlson1981two,taylor1983scanning,taylor1981study,shimizu1983laser,atkinson1982experimental,kusch1975perturbations,guangxi1993,huosini1989guwu,wangfuzhi1865songlun,zhaoyaodong1998xinshidai,biaozhunhua2002tushu,chubanzhuanye2004,who1970factors,peebles2001probability,baishunong1998zhiwu,weinstein1974pathogenic,hanjiren1985lun,dizhi1936dizhi,tushuguan1957tushuguanxue,aaas1883science,fugang2000fengsha,xiaoyu2001chubanye,oclc2000about,scitor2000project}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}无人机相关结构设计}{14}{subsection.2.1.3}\protected@file@percent }
+\citation{tan2025center}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3.1}无人机基座设计}{15}{subsubsection.2.1.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces 无人机底座设计示意图}}{16}{figure.caption.30}\protected@file@percent }
+\newlabel{Bottom_design}{{2.6}{16}{无人机底座设计示意图}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3.2}VSERF支架设计}{16}{subsubsection.2.1.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces 无人机VSERF支架设计示意图}}{16}{figure.caption.31}\protected@file@percent }
+\newlabel{VSERF_stand}{{2.7}{16}{无人机VSERF支架设计示意图}{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}栖息装置系统集成}{17}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}柔性黏附结构 VSERF 的制备}{17}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces VSERF粘附力随电压变化曲线}}{17}{figure.caption.32}\protected@file@percent }
+\newlabel{VSERF_Force}{{2.8}{17}{VSERF粘附力随电压变化曲线}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}VSERF电路实现}{17}{subsection.2.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Input--output voltage relationship}}{18}{table.caption.33}\protected@file@percent }
+\newlabel{tab:voltage_relation}{{2.1}{18}{Input--output voltage relationship}{table.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces 高压发生器输入-输出响应曲线}}{18}{figure.caption.34}\protected@file@percent }
+\newlabel{HVPS_Curve}{{2.9}{18}{高压发生器输入-输出响应曲线}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces 电流变液相关电路}}{19}{figure.caption.35}\protected@file@percent }
+\newlabel{VSERF_Circuit}{{2.10}{19}{电流变液相关电路}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}地面站装置设计}{20}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}本章小结}{20}{section.2.4}\protected@file@percent }
+\citation{megalingam2021drone}
+\pp@pagectr{footnote}{3}{34}{22}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第3章}无人机控制系统构建}{22}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}仿真环境测试}{22}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}仿真平台搭建}{22}{subsection.3.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 仿真场景}}{22}{figure.caption.36}\protected@file@percent }
+\newlabel{sim_setup}{{3.1}{22}{仿真场景}{figure.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces 无人机飞行控制模式对比}}{24}{table.caption.37}\protected@file@percent }
+\newlabel{tab:flight_modes}{{3.1}{24}{无人机飞行控制模式对比}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}仿真结果}{24}{subsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}视觉伺服系统的实现}{25}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}视觉感知与相机几何标定管线}{25}{subsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces MuJoCo 仿真中无人机栖息任务全流程时间序列结果}}{26}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:mujo_co_full_pipeline}{{3.2}{26}{MuJoCo 仿真中无人机栖息任务全流程时间序列结果}{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}基于 AprilTag 的视觉测距方法}{27}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}AprilTag测量在平面与深度方向的可观测性差异分析}{28}{subsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.1}观测模型与线性化}{29}{subsubsection.3.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.2}平面方向的良好条件性}{29}{subsubsection.3.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3.3}深度方向的弱可观测性与退化}{29}{subsubsection.3.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}无人机实机控制器}{30}{section.3.3}\protected@file@percent }
+\citation{arfa2024hybrid}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces 无人机控制器逻辑图}}{31}{figure.caption.39}\protected@file@percent }
+\newlabel{Controller_logic}{{3.3}{31}{无人机控制器逻辑图}{figure.caption.39}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}无人机控制器原理}{31}{subsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}无人机姿态控制器}{32}{subsection.3.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces 双层PID控制系统框图}}{33}{figure.caption.40}\protected@file@percent }
+\newlabel{PID_controller}{{3.4}{33}{双层PID控制系统框图}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2.1}姿态控制器稳定性分析}{33}{subsubsection.3.3.2.1}\protected@file@percent }
+\newlabel{eq:inner_dynamics}{{3.33}{34}{姿态控制器稳定性分析}{equation.3.3.33}{}}
+\newlabel{eq:hurwitz_inner}{{3.34}{34}{姿态控制器稳定性分析}{equation.3.3.34}{}}
+\newlabel{eq:outer_dynamics}{{3.36}{34}{姿态控制器稳定性分析}{equation.3.3.36}{}}
+\newlabel{eq:hurwitz_outer}{{3.37}{34}{姿态控制器稳定性分析}{equation.3.3.37}{}}
+\newlabel{eq:lyap_inner}{{3.38}{34}{姿态控制器稳定性分析}{equation.3.3.38}{}}
+\newlabel{eq:lyap_outer}{{3.39}{35}{姿态控制器稳定性分析}{equation.3.3.39}{}}
+\newlabel{eq:lyap_composite}{{3.40}{35}{姿态控制器稳定性分析}{equation.3.3.40}{}}
+\newlabel{eq:Vdot_expanded}{{3.41}{35}{姿态控制器稳定性分析}{equation.3.3.41}{}}
+\newlabel{eq:param_choice}{{3.44}{35}{姿态控制器稳定性分析}{equation.3.3.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}无人机视觉伺服控制器}{36}{subsection.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}本章小结}{38}{section.3.4}\protected@file@percent }
+\pp@pagectr{footnote}{4}{52}{40}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第4章}栖息无人机的控制实验与讨论}{40}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}实验平台硬件环境搭建}{40}{section.4.1}\protected@file@percent }
+\pp@pagectr{footnote}{5}{53}{41}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第5章}总结与展望}{41}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}主要工作及结论}{41}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}研究展望}{42}{section.5.2}\protected@file@percent }
 \@input{bu.aux}
 \bibdata{ref/refs}
 \gdef\bu@bibdata{ref/refs}
-\pp@pagectr{footnote}{4}{47}{35}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第4章}引用文献的标注}{35}{chapter.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}顺序编码制}{35}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}著者-出版年制}{35}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{参考文献}{36}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{参考文献}{44}{section*.41}\protected@file@percent }
 \ttl@writefile{toc}{\setcounter {tocdepth}{0}}
 \@writefile{lof}{\let\contentsline\ttl@gobblecontents}
 \@writefile{lot}{\let\contentsline\ttl@gobblecontents}
 \@writefile{loe}{\let\contentsline\ttl@gobblecontents}
-\pp@pagectr{footnote}{5}{51}{39}
-\@writefile{toc}{\contentsline {chapter}{\numberline {附录 A}补充内容}{39}{appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}插图}{39}{section.A.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces 附录中的图片示例}}{39}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:appendix-figure}{{A.1}{39}{附录中的图片示例}{figure.caption.40}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}表格}{39}{section.A.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}数学表达式}{39}{section.A.3}\protected@file@percent }
-\newlabel{eq:appendix-equation}{{A.1}{39}{数学表达式}{equation.A.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}文献引用}{39}{section.A.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces 附录中的表格示例}}{40}{table.caption.41}\protected@file@percent }
-\newlabel{tab:appendix-table}{{A.1}{40}{附录中的表格示例}{table.caption.41}{}}
-\@writefile{toc}{\contentsline {section}{参考文献}{40}{section*.42}\protected@file@percent }
+\pp@pagectr{footnote}{6}{58}{46}
+\@writefile{toc}{\contentsline {chapter}{\numberline {附录 A}本文编写的核心程序代码}{46}{appendix.A}\protected@file@percent }
+\newlabel{lst:camera_calibration}{{A.1}{46}{交互式相机标定流程}{lstlisting.A.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.1}{\ignorespaces 交互式相机标定流程}}{46}{lstlisting.A.1}\protected@file@percent }
+\newlabel{lst:ground_station_control}{{A.2}{47}{笔记本电脑接收图传、发送控制信号核心代码}{lstlisting.A.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.2}{\ignorespaces 笔记本电脑接收图传、发送控制信号核心代码}}{47}{lstlisting.A.2}\protected@file@percent }
 \ttl@writefile{toc}{\setcounter {tocdepth}{0}}
-\@writefile{toc}{\contentsline {chapter}{致谢}{41}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{声明}{42}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{致谢}{50}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{声明}{51}{section*.45}\protected@file@percent }
 \ttl@finishall
-\gdef \@abspage@last{54}
+\gdef \@abspage@last{63}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  28 MAY 2026 15:04
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  28 MAY 2026 21:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -890,7 +890,7 @@ Package: bibunits 2004/05/12 v2.4 Multiple bibliographies in one document.
 \@bibunitauxcnt=\count373
 )
 \c@thu@translation@index=\count374
-) (e:/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+ (e:/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
  (e:/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -987,6 +987,37 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip94
 )
 \c@thu@bookmark=\count388
+ (e:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count389
+\lst@gtempboxa=\box87
+\lst@token=\toks41
+\lst@length=\count390
+\lst@currlwidth=\dimen299
+\lst@column=\count391
+\lst@pos=\count392
+\lst@lostspace=\dimen300
+\lst@width=\dimen301
+\lst@newlines=\count393
+\lst@lineno=\count394
+\lst@maxwidth=\dimen302
+ (e:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+) (e:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count395
+\lst@skipnumbers=\count396
+\lst@framebox=\box88
+) (e:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+ (e:/texlive/2024/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count397
+\l__xeCJK_listings_flag_int=\count398
+) (e:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+))
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 21.
  (./thuthesis-example.aux (./bu.aux))
 \openout1 = `thuthesis-example.aux'.
@@ -1049,6 +1080,7 @@ LaTeX Font Info:    ... okay on input line 21.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 (e:/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
@@ -1087,6 +1119,7 @@ Package hyperref Info: Link coloring OFF on input line 21.
 \@outlinefile=\write4
 \openout4 = `thuthesis-example.out'.
 
+\c@lstlisting=\count399
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -1307,22 +1340,107 @@ File: figures/drone_01.JPG Graphic file (type bmp)
 <figures/drone_01.JPG>
 File: figures/Force_test.png Graphic file (type bmp)
 <figures/Force_test.png>
- [13]
+ [13] [14] [15]
+File: figures/bottom.png Graphic file (type bmp)
+<figures/bottom.png>
+File: figures/VSERF_stand.png Graphic file (type bmp)
+<figures/VSERF_stand.png>
+ [16]
 File: figures/VSERF_Force.png Graphic file (type bmp)
 <figures/VSERF_Force.png>
- [14] [15]
+ [17]
 File: figures/HVPS_Curve.png Graphic file (type bmp)
 <figures/HVPS_Curve.png>
- [16]
+ [18]
 File: figures/VSERF_Circuit.png Graphic file (type bmp)
 <figures/VSERF_Circuit.png>
- [17]) (./data/chap03.tex [18]
+ [19] [20]) (./data/chap03.tex [21]
 第3章
 File: figures/sim01.png Graphic file (type bmp)
 <figures/sim01.png>
-[19
+[22
 
-] [20]
+]
+Underfull \hbox (badness 1303) in paragraph at lines 40--41
+[]|\TU/SimSun(0)/m/n/11.04124 角 速 度 模
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 42--43
+[]|\TU/SimSun(0)/m/n/11.04124 以 机 体 角 速 度 为 控 制 目
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 44--45
+\TU/SimSun(0)/m/n/11.04124 行 姿 态 完 全 依 赖 操 作 者
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 48--49
+[]|\TU/SimSun(0)/m/n/11.04124 自 稳 模 式
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 50--51
+\TU/SimSun(0)/m/n/11.04124 控 自 动 调 节 滚 转 与 俯 仰
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 52--53
+[]|\TU/SimSun(0)/m/n/11.04124 具 备 自 动 回 平 与 姿 态 角
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 56--57
+[]|\TU/SimSun(0)/m/n/11.04124 姿 态 控 制
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 58--59
+[]|\TU/SimSun(0)/m/n/11.04124 采 用 姿 态 外 环 与 角 速 度
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 58--59
+\TU/SimSun(0)/m/n/11.04124 以 目 标 姿 态 角 作 为 参 考
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 60--61
+[]|\TU/SimSun(0)/m/n/11.04124 具 有 较 好 的 姿 态 跟 踪 性
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 60--61
+\TU/SimSun(0)/m/n/11.04124 外 部 扰 动 条 件 下 维 持 稳
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[]|\TU/SimSun(0)/m/n/11.04124 位 置 保
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+\TU/SimSun(0)/m/n/11.04124 持 模 式
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+|\TU/SimSun(0)/m/n/11.04124 （\TU/TimesNewRoman(0)/m/n/11.04124 Position
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 66--67
+[]|\TU/SimSun(0)/m/n/11.04124 以 位 置 或 速 度 为 控 制 目
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 68--69
+\TU/SimSun(0)/m/n/11.04124 对 应 期 望 运 动 趋 势 而 非
+ []
+
+[23] [24]
 File: figures/sim01.PNG Graphic file (type bmp)
 <figures/sim01.PNG>
 File: figures/sim02.PNG Graphic file (type bmp)
@@ -1339,23 +1457,27 @@ File: figures/sim07.PNG Graphic file (type bmp)
 <figures/sim07.PNG>
 File: figures/sim08.PNG Graphic file (type bmp)
 <figures/sim08.PNG>
- [21] [22]
+ [25] [26]
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 12.74046pt on input line 137.
- [23] [24] [25] [26]
+(Font)              scaled to size 12.74046pt on input line 187.
+ [27] [28] [29]
 File: figures/controller.png Graphic file (type bmp)
 <figures/controller.png>
- [27]
+ [30] [31]
 File: figures/PID.png Graphic file (type bmp)
 <figures/PID.png>
- [28] [29] [30] [31] [32] [33]) (./data/chap04.tex [34]
+ [32] [33] [34] [35] [36] [37] [38]) (./data/chap04.tex [39]
 第4章
-)
-\openout3 = `bu.aux'.
-
- (./thuthesis-example.bbl [35
+) (./data/chap05.tex [40
 
 ]
+第5章
+[41
+
+] [42])
+\openout3 = `bu.aux'.
+
+ (./thuthesis-example.bbl [43]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 7.00075pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -1364,38 +1486,36 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 24.
- [36
+ [44
 
 
-] [37]) (./data/appendix.tex (./bu.aux) [38]
+]) (./data/appendix.tex (./bu.aux) [45]
 附录 A
-File: example-image-a.pdf Graphic file (type pdf)
-<use example-image-a.pdf>
-(./thuthesis-example-appendix-a.aux)
-\openout3 = `thuthesis-example-appendix-a.aux'.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 6.
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
+(Font)              scaled to size 9.55533pt on input line 6.
+[46
 
- (./thuthesis-example-appendix-a.bbl [39
-
-])) [40] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [41
+] [47] [48]) [49] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [50
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
 []\TU/SimSun(0)/m/n/12.045 本 人 郑 重 声 明：|  所 呈 交 的 综 合 论 文 训 练 论 文，|  是 本 人 在 导 师 指 导 下，|  独 立 进
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 行 研 究 工 作 所 取 得 的 成 果。|  尽 我 所 知，|  除 文 中 已 经 注 明 引 用 的 内 容 外，|  本 论 文 的
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-(./bu.aux) [42
+(./bu.aux) [51
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1404,15 +1524,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `thuthesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 77D57EDB0AC12515F824AAC4D38F21AF;8240.
+(rerunfilecheck)             Checksum: 9A4AD9BB825E30887283E08004F3A1DC;8862.
  ) 
 Here is how much of TeX's memory you used:
- 32135 strings out of 476676
- 706695 string characters out of 5799435
- 1953842 words of memory out of 5000000
- 53584 multiletter control sequences out of 15000+600000
- 566785 words of font info for 198 fonts, out of 8000000 for 9000
+ 33638 strings out of 476676
+ 725886 string characters out of 5799435
+ 2128842 words of memory out of 5000000
+ 55069 multiletter control sequences out of 15000+600000
+ 566801 words of font info for 200 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
- 106i,14n,130p,1433b,2790s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,14n,130p,1433b,4065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (54 pages).
+Output written on thuthesis-example.pdf (63 pages).

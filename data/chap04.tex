@@ -1,76 +1,12 @@
 % !TeX root = ../thuthesis-example.tex
 
-\chapter{引用文献的标注}
+\chapter{栖息无人机的控制实验与讨论}
+本章围绕微型无人机栖息任务的控制实验与系统性能验证展开，旨在基于前述硬件平台与控制框架，对所设计的视觉伺服控制系统、姿态稳定控制器以及 VSERF 柔性黏附栖息方案进行实验验证与性能分析，进一步评估系统在真实环境下的控制效果、鲁棒性与工程可行性。
 
-模板支持 BibTeX 和 BibLaTeX 两种方式处理参考文献。
-下文主要介绍 BibTeX 配合 \pkg{natbib} 宏包的主要使用方法。
+首先，将对实验平台及测试流程进行介绍，包括地面站视觉处理系统、无人机机载控制架构、AprilTag 目标环境以及 VSERF 黏附执行器的实验部署方式，并说明实验过程中涉及的定义、控制频率与关键参数设置，以保证实验结果的可重复性与分析一致性。
 
+随后，将围绕无人机姿态控制性能与视觉伺服能力开展基础实验，通过悬停稳定性测试、目标跟踪与自主接近实验，对姿态内环控制器的稳定调节能力以及视觉外环在目标定位与误差收敛过程中的动态表现进行分析。同时，结合实验数据对视觉观测误差、通信时延及受限机载感知条件下系统闭环性能的影响进行讨论，以验证第三章理论分析与仿真结果在实际系统中的适用性。
 
-\section{顺序编码制}
+在此基础上，将进一步开展无人机自主栖息实验，对系统从目标识别、轨迹接近、姿态调整到最终附着过程中的整体任务执行能力进行验证。此外，还将针对实验过程中出现的误差来源与失效模式进行讨论，包括视觉尺度退化、姿态扰动、气流干扰以及结构柔性带来的不确定性，以总结系统在复杂实际环境中的性能边界与改进方向。
 
-在顺序编码制下，默认的 \cs{cite} 命令同 \cs{citep} 一样，序号置于方括号中，
-引文页码会放在括号外。
-统一处引用的连续序号会自动用短横线连接。
-
-\thusetup{
-  cite-style = super,
-}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\cite{zhangkun1994}|               & \cite{zhangkun1994}               \\
-  \verb|\citet{zhangkun1994}|              & \citet{zhangkun1994}              \\
-  \verb|\citep{zhangkun1994}|              & \citep{zhangkun1994}              \\
-  \verb|\cite[42]{zhangkun1994}|           & \cite[42]{zhangkun1994}           \\
-  \verb|\cite{zhangkun1994,zhukezhen1973}| & \cite{zhangkun1994,zhukezhen1973} \\
-\end{tabular}
-
-
-也可以取消上标格式，将数字序号作为文字的一部分。
-建议全文统一使用相同的格式。
-
-\thusetup{
-  cite-style = inline,
-}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\cite{zhangkun1994}|               & \cite{zhangkun1994}               \\
-  \verb|\citet{zhangkun1994}|              & \citet{zhangkun1994}              \\
-  \verb|\citep{zhangkun1994}|              & \citep{zhangkun1994}              \\
-  \verb|\cite[42]{zhangkun1994}|           & \cite[42]{zhangkun1994}           \\
-  \verb|\cite{zhangkun1994,zhukezhen1973}| & \cite{zhangkun1994,zhukezhen1973} \\
-\end{tabular}
-
-
-
-\section{著者-出版年制}
-
-著者-出版年制下的 \cs{cite} 跟 \cs{citet} 一样。
-
-\thusetup{
-  cite-style = author-year,
-}
-\noindent
-\begin{tabular}{@{}l@{$\Rightarrow$}l@{}}
-  \verb|\cite{zhangkun1994}|                & \cite{zhangkun1994}                \\
-  \verb|\citet{zhangkun1994}|               & \citet{zhangkun1994}               \\
-  \verb|\citep{zhangkun1994}|               & \citep{zhangkun1994}               \\
-  \verb|\cite[42]{zhangkun1994}|            & \cite[42]{zhangkun1994}            \\
-  \verb|\citep{zhangkun1994,zhukezhen1973}| & \citep{zhangkun1994,zhukezhen1973} \\
-\end{tabular}
-
-\vskip 2ex
-\thusetup{
-  cite-style = super,
-}
-注意，引文参考文献的每条都要在正文中标注
-\cite{zhangkun1994,zhukezhen1973,dupont1974bone,zhengkaiqing1987,%
-  jiangxizhou1980,jianduju1994,merkt1995rotational,mellinger1996laser,%
-  bixon1996dynamics,mahui1995,carlson1981two,taylor1983scanning,%
-  taylor1981study,shimizu1983laser,atkinson1982experimental,%
-  kusch1975perturbations,guangxi1993,huosini1989guwu,wangfuzhi1865songlun,%
-  zhaoyaodong1998xinshidai,biaozhunhua2002tushu,chubanzhuanye2004,%
-  who1970factors,peebles2001probability,baishunong1998zhiwu,%
-  weinstein1974pathogenic,hanjiren1985lun,dizhi1936dizhi,%
-  tushuguan1957tushuguanxue,aaas1883science,fugang2000fengsha,%
-  xiaoyu2001chubanye,oclc2000about,scitor2000project%
-}。
+\section{实验平台硬件环境搭建}
