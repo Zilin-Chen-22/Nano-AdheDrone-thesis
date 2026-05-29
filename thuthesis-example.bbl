@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -112,6 +112,27 @@ PAN Y, LIU X~J, ZHAO H.
 \newblock {PX4}: Px4-autopilot\allowbreak[EB/OL].
 \newblock 2015.
 \newblock \url{https://github.com/PX4/PX4-Autopilot}.
+
+\bibitem[Mademlis et~al.(2024)Mademlis, Symeonidis, Tefas, and Pitas]{mademlis2024vision}
+MADEMLIS I, SYMEONIDIS C, TEFAS A, et~al.
+\newblock Vision-based drone control for autonomous uav cinematography\allowbreak[J].
+\newblock Multimedia Tools and Applications, 2024, 83\allowbreak (8): 25055-25083.
+
+\bibitem[Passalis et~al.(2018)Passalis, Tefas, and Pitas]{passalis2018efficient}
+PASSALIS N, TEFAS A, PITAS I.
+\newblock Efficient camera control using 2d visual information for unmanned aerial vehicle-based cinematography\allowbreak[C]//\allowbreak
+2018 IEEE International Symposium on Circuits and Systems (ISCAS).
+\newblock IEEE, 2018: 1-5.
+
+\bibitem[Galvane et~al.(2017)Galvane, Fleureau, Tariolle, and Guillotel]{galvane2017automated}
+GALVANE Q, FLEUREAU J, TARIOLLE F~L, et~al.
+\newblock Automated cinematography with unmanned aerial vehicles\allowbreak[A].
+\newblock 2017.
+
+\bibitem[Paredes-Vall{\'e}s et~al.(2024)Paredes-Vall{\'e}s, Hagenaars, Dupeyroux, Stroobants, Xu, and de~Croon]{paredes2024fully}
+PAREDES-VALL{\'E}S F, HAGENAARS J~J, DUPEYROUX J, et~al.
+\newblock Fully neuromorphic vision and control for autonomous drone flight\allowbreak[J].
+\newblock Science Robotics, 2024, 9\allowbreak (90): eadi0591.
 
 \bibitem[Xia et~al.(2024)Xia, Li, Li, Zou, and Zuo]{xia2024cooperative}
 XIA K, LI X, LI K, et~al.

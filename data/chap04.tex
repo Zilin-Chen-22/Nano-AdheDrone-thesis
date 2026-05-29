@@ -12,20 +12,148 @@
 \section{实验平台硬件环境搭建}
 为验证无人机自主栖息过程的可行性并实现系统闭环控制，本文搭建了如图~\ref{experiment_setup}所示的实验平台。该实验平台主要由起飞平台、栖息平台及辅助照明系统等组成，用于为无人机自主起飞、视觉感知、目标接近与附着实验提供稳定的测试环境。
 
+\subsection{栖息场景搭建}
 其中，栖息平台固定安装于三轴手动滑台上，可便捷调节其空间位置及相对高度，从而实现目标平面与地面距离的灵活调整，以满足不同实验条件下无人机接近与栖息测试需求。滑轨距离地面的高度可以从\SI{0}{cm}至\SI{80}{cm}调节。
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width = 0.8\textwidth]{experiment_setup.JPG}
-  \caption{VSERF粘附力随电压变化曲线}\label{experiment_setup}
+  \caption{栖息实验场景搭建}\label{experiment_setup}
 \end{figure}
 
+\subsection{无人机及地面站系统硬件搭建}
 为实现无人机视觉信息接收与控制指令生成，系统搭建了地面站装置，其主要设备如图~\ref{ground_station_set}所示。地面站主要包括视频接收高频头、图像传输接收设备以及控制计算终端等，用于完成机载图像接收、视觉信息处理及控制指令发送等功能。
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width = 0.8\textwidth]{gs_set.jpg}
-  \caption{VSERF粘附力随电压变化曲线}\label{ground_station_set}
+  \caption{地面站系统硬件选型}\label{ground_station_set}
 \end{figure}
 
 实验过程中，将预先打印的 AprilTag 标签固定于光源下方，其主要目的在于利用光源作为栖息目标载体，模拟无人机在真实环境中向路灯等高位设施执行自主栖息任务的应用场景。实验预期中，无人机在视觉伺服控制作用下完成对 AprilTag 的识别与相对位姿估计，并逐步接近目标区域，最终执行附着动作并稳定栖息于光源下方。
+
+依据章节~\ref{Drone_system_design}所示的系统设计方案，完成无人机平台的硬件搭建。系统所采用的主要硬件组成及参数信息如表~\ref{Drone_part_list}所示。
+
+\begin{table}[htbp]
+    \centering
+    \caption{无人机系统主要零件清单}
+    \label{Drone_part_list}
+    \begin{tabular}{cccc}
+        \toprule
+        零件名称 & 型号 & 数量 & 备注 \\
+        \midrule
+        机架 & N/A & 1 & 碳纤维加工件 \\
+        相机电池架 & N/A & 1 & 3D 打印件 \\
+        无刷电机 & T-HOBBY M0802 & 4 & -- \\
+        螺旋桨 & T-MOTOR M12199 & 4 & -- \\
+        飞控主板 & F4 AIO 1S & 1 & STM32F411，集成电调 \\
+        摄像头 & FOXEER 2 MICRO 1.7 & 1 & 分辨率 1200TVL \\
+        电池 & DAI WANG GAU 1S & 1 & 容量 \SI{550}{mAh} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{无人机控制器验证}
+将无人机搭建完毕，放入测试场地进行无VSERF器件测试，以验证仿真及数值计算中控制器的效果。无人机从起飞，能够自主寻找AprilTag，并且进行导航、轨迹规划，直到无人机与待黏附表面发生碰撞。在无VSERF器件的情况下，无人机发生碰撞后会弹开，无黏附效果。实验过程如图~\ref{fig:controller_verify}所示。
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_01.png}
+        \caption{起飞阶段}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_02.png}
+        \caption{视觉对准}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_03.png}
+        \caption{视觉对准}
+    \end{subfigure}
+    
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_04.png}
+        \caption{视觉对准}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_05.png}
+        \caption{视觉对准}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_06.png}
+        \caption{视觉对准}
+    \end{subfigure}
+
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_07.png}
+        \caption{上升接近（无视觉引导）}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_08.png}
+        \caption{上升接近（无视觉引导）}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{verify_09.png}
+        \caption{碰撞后弹开}
+    \end{subfigure}
+
+    \caption{无人机无VSERF器件的情况下控制器的验证}
+    \label{fig:controller_verify}
+\end{figure}
+
+随后，对无人机自主接近与栖息过程进行了多次重复实验，以验证控制器在实际环境中的稳定性与抗扰动能力。由于实验过程中环境条件难以完全保持一致，例如微小气流扰动以及初始姿态误差等因素的影响，无人机在接近目标并完成黏附前的飞行路径存在一定差异。为更直观地展示无人机在不同实验条件下的运动过程，本文采用图像堆栈方式对三次实验的飞行过程进行可视化，实验结果如图~\ref{fig:Path_verify}所示。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.65\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{path_verify_01.png}
+  \caption{实验1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.65\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{path_verify_02.png}
+  \caption{实验2}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.65\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{path_verify_03.png}
+  \caption{实验3}
+  \end{subfigure}
+
+  \caption{三次无人机自主接近实验的飞行路径图像堆栈结果}
+  \label{fig:Path_verify}
+
+\end{figure}
+
+实验结果表明，尽管受到外部扰动影响，无人机在多次实验中均能够稳定完成目标接近过程，并最终沿期望方向飞向目标区域。虽然不同实验中的具体飞行轨迹存在一定偏差，但整体路径均表现出良好的收敛性与一致性，说明所设计的视觉伺服控制器具备一定的抗扰动能力与路径引导能力，能够有效完成黏附前的自主接近与路径跟踪任务。
+
+
+
+\section{VSERF器件验证}
+
+\section{无人机栖息实验}
+
+\section{本章小结}
