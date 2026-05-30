@@ -17,7 +17,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width = 0.8\textwidth]{experiment_setup.JPG}
+  \includegraphics[width = 0.8\textwidth]{experiment_setup.png}
   \caption{栖息实验场景搭建}\label{experiment_setup}
 \end{figure}
 
@@ -54,6 +54,63 @@
 \end{table}
 
 \section{无人机控制器验证}
+本节对所设计的无人机控制器进行系统性验证，主要从仿真误差分析与实机飞行实验两个层面展开。在仿真层面，通过记录无人机在飞行过程中的三轴误差（$X$、$Y$、$Z$），并将其映射至空间轨迹，以评估控制器在不同参数设置下的收敛性与稳定性。在实机层面，基于视觉伺服系统与AprilTag定位方法，对无人机在真实环境中的自主接近与栖息过程进行多次重复实验，从而验证控制器在存在外界扰动条件下的鲁棒性与实际可行性。整体验证流程如图~\ref{fig:Error_traj}、图~\ref{fig:controller_verify}及图~\ref{fig:Path_verify}所示。
+
+\subsection{控制器数据采集}
+设计程序用于记录无人机飞行过程中的状态数据，主要包括 $X$、$Y$、$Z$ 三个方向的误差量。通过简单的坐标变换，该误差可以进一步映射为无人机在空间坐标系下的相对位置，从而用于分析其运动轨迹与控制性能。如图~\ref{fig:Error_traj}所示，六组实验分别对应六种不同的控制器参数或工作状态。
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_1.png}
+        \caption{轻微振荡但整体收敛}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_2.png}
+        \caption{较大幅度振荡但仍趋于收敛}
+    \end{subfigure}
+
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_3.png}
+        \caption{收敛性能较优}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_4.png}
+        \caption{高度方向出现明显发散}
+    \end{subfigure}
+
+    \vspace{1.0em}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_5.png}
+        \caption{存在单向漂移，未形成闭环收敛}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Error_Trajectory_6.png}
+        \caption{几乎无有效控制响应}
+    \end{subfigure}
+
+    \caption{无人机误差轨迹及不同控制器性能对比}
+    \label{fig:Error_traj}
+\end{figure}
+
+从图中可以观察到，不同控制器参数下系统呈现出显著不同的动态特性。实验1–3整体表现为误差逐渐收敛，但伴随不同程度的振荡，其中实验3具有最优的收敛性能与最小的稳态波动。实验4在高度方向出现明显发散，表明纵向通道控制增益可能存在不匹配或耦合未充分补偿的问题。实验5表现为明显的单向漂移，说明系统未形成有效闭环约束或存在积分饱和现象。实验6则几乎未产生有效控制输出，可能对应控制器失效或执行器饱和状态。
+
+上述结果表明，该误差轨迹可作为评估控制器稳定性与收敛性能的直观指标，能够有效区分不同控制策略在三维空间中的动态表现。
+
+\subsection{实机测试结果}
 将无人机搭建完毕，放入测试场地进行无VSERF器件测试，以验证仿真及数值计算中控制器的效果。无人机从起飞，能够自主寻找AprilTag，并且进行导航、轨迹规划，直到无人机与待黏附表面发生碰撞。在无VSERF器件的情况下，无人机发生碰撞后会弹开，无黏附效果。实验过程如图~\ref{fig:controller_verify}所示。
 
 \begin{figure}[htbp]
@@ -125,19 +182,23 @@
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.65\textwidth}
+  \begin{subfigure}[b]{0.7\textwidth}
   \centering
   \includegraphics[width=\textwidth]{path_verify_01.png}
   \caption{实验1}
   \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.65\textwidth}
+
+  \vspace{1.0em}
+
+  \begin{subfigure}[b]{0.7\textwidth}
   \centering
   \includegraphics[width=\textwidth]{path_verify_02.png}
   \caption{实验2}
   \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.65\textwidth}
+
+  \vspace{1.0em}
+
+  \begin{subfigure}[b]{0.7\textwidth}
   \centering
   \includegraphics[width=\textwidth]{path_verify_03.png}
   \caption{实验3}
@@ -153,6 +214,25 @@
 
 
 \section{VSERF器件验证}
+依据课题组所提出的方法制备 VSERF 柔性黏附器件~\cite{pan2022stretchable}，并将其集成至当前无人机平台，完成相关驱动电路连接后置于栖息实验环境中。为验证 VSERF 器件实际承载能力及其与无人机控制系统之间的通信链路可靠性，首先开展人工辅助栖息实验。
+
+实验过程中，通过人为施加接触预载荷，使无人机与栖息目标表面充分接触，并将无人机悬挂于目标下方；随后启动 VSERF 黏附器件，其实验结果如图~\ref{fig:hand_stick}所示。可以观察到，在器件工作状态下，无人机能够稳定悬挂于目标表面下方，未出现明显脱附或姿态失稳现象。实验结果表明，所制备的 VSERF 柔性黏附器件具备满足无人机栖息任务需求的承载能力，同时验证了高压驱动电路与控制通信链路工作的有效性，为后续自主栖息实验提供了系统基础。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{hand_stick_01.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{hand_stick_02.png}
+  \end{subfigure}
+
+  \caption{人工辅助栖息实验结果及器件验证}
+  \label{fig:hand_stick}
+\end{figure}
 
 \section{无人机栖息实验}
 

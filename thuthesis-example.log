@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  29 MAY 2026 15:55
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  30 MAY 2026 10:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,17 +1247,17 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 
  [4] (./thuthesis-example.lof
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 2.
+(Font)              scaled to size 12.04628pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 2.
+(Font)              scaled to size 9.03471pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 2.
+(Font)              scaled to size 7.22777pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 2.
+(Font)              scaled to size 12.0437pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 2.
+(Font)              scaled to size 9.03278pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 2.
+(Font)              scaled to size 7.22623pt on input line 3.
 )
 \tf@lof=\write6
 \openout6 = `thuthesis-example.lof'.
@@ -1265,23 +1265,22 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
  [5
 
 
-] (./thuthesis-example.lot)
+] [6] (./thuthesis-example.lot)
 \tf@lot=\write7
 \openout7 = `thuthesis-example.lot'.
 
- (./data/denotation.tex [6
+ (./data/denotation.tex [7
 
 
-]) [7
+]) [8
 
-
-] [8
 
 ] (./data/chap01.tex
 第1章
 File: figures/kinds_of_UAV.png Graphic file (type bmp)
 <figures/kinds_of_UAV.png>
 [1
+
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 26.
@@ -1298,32 +1297,116 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 5.52002pt on input line 26.
  [2]
+File: figures/bird_perch01.jpg Graphic file (type bmp)
+<figures/bird_perch01.jpg>
+File: figures/dragonfly_perch01.jpg Graphic file (type bmp)
+<figures/dragonfly_perch01.jpg>
+File: figures/bat_perch01.jpg Graphic file (type bmp)
+<figures/bat_perch01.jpg>
 File: figures/grab.png Graphic file (type bmp)
 <figures/grab.png>
+ [3]
 File: figures/sticker.png Graphic file (type bmp)
 <figures/sticker.png>
- [3]
-Overfull \hbox (13.85674pt too wide) in paragraph at lines 77--104
+
+Overfull \hbox (13.85674pt too wide) in paragraph at lines 105--132
  [][] 
  []
 
 [4]
 File: figures/ERF.png Graphic file (type bmp)
 <figures/ERF.png>
+ [5]
 File: figures/VSERF_Zhao.png Graphic file (type bmp)
 <figures/VSERF_Zhao.png>
- [5]
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+[]|\TU/TimesNewRoman(0)/m/n/11.04124 VSERF |\TU/SimSun(0)/m/n/11.04124 （电
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+[]|\TU/SimSun(0)/m/n/11.04124 毫 秒 级
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 190--191
+[]|\TU/SimSun(0)/m/n/11.04124 极 低  |（断 电
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 193--194
+[]|\TU/SimSun(0)/m/n/11.04124 低  |（仅 需 高
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 195--196
+[]|\TU/SimSun(0)/m/n/11.04124 介 电 弹 性 体
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 200--201
+[]|\TU/SimSun(0)/m/n/11.04124 中  |（机 械 预
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 202--203
+[]|\TU/SimSun(0)/m/n/11.04124 形 状 记 忆 合
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 206--207
+[]|\TU/SimSun(0)/m/n/11.04124 否  |（需 持 续
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 207--208
+[]|\TU/SimSun(0)/m/n/11.04124 高  |（热 管 理
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+[]|\TU/SimSun(0)/m/n/11.04124 颗 粒 阻 塞
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 214--215
+[]|\TU/SimSun(0)/m/n/11.04124 高  |（需 气 泵
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 229--230
+[]|\TU/SimSun(0)/m/n/11.04124 低  |（脱 附 需
+ []
+
+[7] [8]
 File: figures/vision_controller.png Graphic file (type bmp)
 <figures/vision_controller.png>
- [6] [7] [8] [9]
+ [9] [10]
+
+Package natbib Warning: Citation `koenig2004design' on page 11 undefined on input line 308.
+
+
+Package natbib Warning: Citation `zhou2024towards' on page 11 undefined on input line 308.
+
+
+Package natbib Warning: Citation `zakka2025mujoco' on page 11 undefined on input line 308.
+
+File: figures/gazebo.png Graphic file (type bmp)
+<figures/gazebo.png>
+File: figures/issac_sim.jpg Graphic file (type bmp)
+<figures/issac_sim.jpg>
+File: figures/mujoco.png Graphic file (type bmp)
+<figures/mujoco.png>
+[11] [12] [13] [14] [15]
 File: figures/target.png Graphic file (type bmp)
 <figures/target.png>
- [10]
+ [16]
 File: figures/timeline.png Graphic file (type bmp)
 <figures/timeline.png>
-) (./data/chap02.tex [11]
+) (./data/chap02.tex [17]
 第2章
-[12
+[18
 
 ]
 File: figures/flat-stress.PNG Graphic file (type bmp)
@@ -1332,40 +1415,42 @@ File: figures/ori-stress.PNG Graphic file (type bmp)
 <figures/ori-stress.PNG>
 File: figures/new-stress.PNG Graphic file (type bmp)
 <figures/new-stress.PNG>
- [13]
+ [19]
 File: figures/communication.png Graphic file (type bmp)
 <figures/communication.png>
 File: figures/weight.jpg Graphic file (type bmp)
 <figures/weight.jpg>
-File: figures/drone_02.JPG Graphic file (type bmp)
-<figures/drone_02.JPG>
-File: figures/drone_01.JPG Graphic file (type bmp)
-<figures/drone_01.JPG>
- [14]
+File: figures/weight2.jpg Graphic file (type bmp)
+<figures/weight2.jpg>
+ [20]
 File: figures/Force_test.png Graphic file (type bmp)
 <figures/Force_test.png>
- [15] [16]
+ [21] [22]
 File: figures/bottom.png Graphic file (type bmp)
 <figures/bottom.png>
- [17]
 File: figures/VSERF_stand.png Graphic file (type bmp)
 <figures/VSERF_stand.png>
+ [23]
 File: figures/VSERF_stand_sim.png Graphic file (type bmp)
 <figures/VSERF_stand_sim.png>
- [18]
+File: figures/drone_02.png Graphic file (type bmp)
+<figures/drone_02.png>
+File: figures/drone_01.png Graphic file (type bmp)
+<figures/drone_01.png>
+ [24]
 File: figures/VSERF_Force.png Graphic file (type bmp)
 <figures/VSERF_Force.png>
- [19]
+ [25]
 File: figures/HVPS_Curve.png Graphic file (type bmp)
 <figures/HVPS_Curve.png>
- [20]
+ [26]
 File: figures/VSERF_Circuit.png Graphic file (type bmp)
 <figures/VSERF_Circuit.png>
- [21] [22]) (./data/chap03.tex [23]
+ [27] [28]) (./data/chap03.tex [29]
 第3章
 File: figures/sim01.png Graphic file (type bmp)
 <figures/sim01.png>
-[24
+[30
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 40--41
@@ -1447,7 +1532,7 @@ Underfull \hbox (badness 1014) in paragraph at lines 68--69
 \TU/SimSun(0)/m/n/11.04124 对 应 期 望 运 动 趋 势 而 非
  []
 
-[25] [26]
+[31] [32]
 File: figures/sim01.PNG Graphic file (type bmp)
 <figures/sim01.PNG>
 File: figures/sim02.PNG Graphic file (type bmp)
@@ -1464,25 +1549,38 @@ File: figures/sim07.PNG Graphic file (type bmp)
 <figures/sim07.PNG>
 File: figures/sim08.PNG Graphic file (type bmp)
 <figures/sim08.PNG>
- [27] [28]
+ [33] [34]
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 12.74046pt on input line 187.
- [29] [30] [31]
+ [35] [36] [37]
 File: figures/controller.png Graphic file (type bmp)
 <figures/controller.png>
- [32] [33]
+ [38] [39]
 File: figures/PID.png Graphic file (type bmp)
 <figures/PID.png>
- [34] [35] [36] [37] [38] [39] [40]) (./data/chap04.tex [41]
+ [40] [41] [42] [43] [44] [45] [46]) (./data/chap04.tex [47]
 第4章
-File: figures/experiment_setup.JPG Graphic file (type bmp)
-<figures/experiment_setup.JPG>
-[42
+File: figures/experiment_setup.png Graphic file (type bmp)
+<figures/experiment_setup.png>
+[48
 
 ]
 File: figures/gs_set.jpg Graphic file (type bmp)
 <figures/gs_set.jpg>
- [43]
+ [49]
+File: figures/Error_Trajectory_1.png Graphic file (type bmp)
+<figures/Error_Trajectory_1.png>
+File: figures/Error_Trajectory_2.png Graphic file (type bmp)
+<figures/Error_Trajectory_2.png>
+File: figures/Error_Trajectory_3.png Graphic file (type bmp)
+<figures/Error_Trajectory_3.png>
+File: figures/Error_Trajectory_4.png Graphic file (type bmp)
+<figures/Error_Trajectory_4.png>
+File: figures/Error_Trajectory_5.png Graphic file (type bmp)
+<figures/Error_Trajectory_5.png>
+File: figures/Error_Trajectory_6.png Graphic file (type bmp)
+<figures/Error_Trajectory_6.png>
+ [50] [51]
 File: figures/verify_01.png Graphic file (type bmp)
 <figures/verify_01.png>
 File: figures/verify_02.png Graphic file (type bmp)
@@ -1501,21 +1599,25 @@ File: figures/verify_08.png Graphic file (type bmp)
 <figures/verify_08.png>
 File: figures/verify_09.png Graphic file (type bmp)
 <figures/verify_09.png>
- [44]
 File: figures/path_verify_01.png Graphic file (type bmp)
 <figures/path_verify_01.png>
 File: figures/path_verify_02.png Graphic file (type bmp)
 <figures/path_verify_02.png>
 File: figures/path_verify_03.png Graphic file (type bmp)
 <figures/path_verify_03.png>
- [45]) (./data/chap05.tex [46]
+ [52] [53]
+File: figures/hand_stick_01.png Graphic file (type bmp)
+<figures/hand_stick_01.png>
+File: figures/hand_stick_02.png Graphic file (type bmp)
+<figures/hand_stick_02.png>
+) (./data/chap05.tex [54]
 第5章
-[47
+[55
 
-] [48])
+] [56])
 \openout3 = `bu.aux'.
 
- (./thuthesis-example.bbl [49]
+ (./thuthesis-example.bbl [57]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 7.00075pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -1524,17 +1626,17 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 24.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 24.
- [50
+ [58
 
 
-]) (./data/appendix.tex (./bu.aux) [51]
+] [59]) (./data/appendix.tex (./bu.aux) [60]
 附录 A
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 6.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 9.55533pt on input line 6.
-[52
+[61
 
-] [53] [54]) [55] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [56
+] [62] [63]) [64] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [65
 
 
 
@@ -1553,7 +1655,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-(./bu.aux) [57
+
+Package natbib Warning: There were undefined citations.
+
+(./bu.aux) [66
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1561,20 +1666,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thuthesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 26BA4D003D0FC35865883025E74E774C;9741.
+(rerunfilecheck)             Checksum: 1022071E140830CB6C5E2E2EE74A8777;10902.
  ) 
 Here is how much of TeX's memory you used:
- 33835 strings out of 476676
- 731003 string characters out of 5799435
- 2128842 words of memory out of 5000000
- 55250 multiletter control sequences out of 15000+600000
- 566801 words of font info for 200 fonts, out of 8000000 for 9000
+ 34073 strings out of 476676
+ 739307 string characters out of 5799435
+ 2127842 words of memory out of 5000000
+ 55473 multiletter control sequences out of 15000+600000
+ 566809 words of font info for 201 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
  106i,14n,130p,1433b,4065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (69 pages).
+Output written on thuthesis-example.pdf (78 pages).

@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -29,10 +29,36 @@ KIM S~J, LIM G~J, CHO J.
 \newblock Drone flight scheduling under uncertainty on battery duration and air temperature\allowbreak[J].
 \newblock Computers \& Industrial Engineering, 2018, 117: 291-302.
 
+\bibitem[Beigi et~al.(2022)Beigi, Rajabi, and Aghakhani]{beigi2022overview}
+BEIGI P, RAJABI M~S, AGHAKHANI S.
+\newblock An overview of drone energy consumption factors and models\allowbreak[J].
+\newblock Handbook of smart energy systems, 2022: 1-20.
+
 \bibitem[Schmidt(2016)]{schmidt2016stability}
 SCHMIDT D~K.
 \newblock Stability augmentation and active flutter suppression of a flexible flying-wing drone\allowbreak[J].
 \newblock Journal of Guidance, Control, and Dynamics, 2016, 39\allowbreak (3): 409-422.
+
+\bibitem[Hauf et~al.(2023)Hauf, Kocer, Slatter, Nguyen, Pang, Clark, Johns, and Kovac]{hauf2023learning}
+HAUF F, KOCER B~B, SLATTER A, et~al.
+\newblock Learning tethered perching for aerial robots\allowbreak[M].
+\newblock IEEE, 2023.
+
+\bibitem[Lan et~al.(2024)Lan, Romanello, Kovac, Armanini, and Kocer]{lan2024aerial}
+LAN T, ROMANELLO L, KOVAC M, et~al.
+\newblock Aerial tensile perching and disentangling mechanism for long-term environmental monitoring\allowbreak[C]//\allowbreak
+2024 IEEE International Conference on Robotics and Automation (ICRA).
+\newblock IEEE, 2024: 3827-3833.
+
+\bibitem[Li et~al.(2025)Li, Windsor, and Kocer]{li2025treecreeper}
+LI H, WINDSOR S, KOCER B~B.
+\newblock Treecreeper drone: Adaptive mechanism for passive tree trunk perching\allowbreak[J].
+\newblock Advanced Intelligent Systems, 2025, 7\allowbreak (8): 2401101.
+
+\bibitem[W{\"u}est et~al.(2024)W{\"u}est, Jeger, Feroskhan, Ajanic, Bergonti, and Floreano]{wuest2024agile}
+W{\"U}EST V, JEGER S, FEROSKHAN M, et~al.
+\newblock Agile perching maneuvers in birds and morphing-wing drones\allowbreak[J].
+\newblock Nature communications, 2024, 15\allowbreak (1): 8330.
 
 \bibitem[Mohsan et~al.(2022)Mohsan, Khan, Noor, Ullah, and Alsharif]{mohsan2022towards}
 MOHSAN S~A~H, KHAN M~A, NOOR F, et~al.
@@ -156,6 +182,17 @@ TODOROV E, EREZ T, TASSA Y.
 TAN Y~H, LI W, ZHAO H.
 \newblock A center-less quadrotor design with a soft enveloping grasper for aerial grasping and delivery tasks\allowbreak[J].
 \newblock The International Journal of Robotics Research, 2025, 44\allowbreak (13): 2215-2234.
+
+\bibitem[{Bambu Lab Wiki}(2026)]{PLA}
+{Bambu Lab Wiki}.
+\newblock PLA 使用指南\allowbreak[EB/OL].
+\newblock 2026.
+\newblock \url{https://wiki.bambulab.com/zh/home}.
+
+\bibitem[Agunloye(2023)]{agunloye2023low}
+AGUNLOYE A~O.
+\newblock A low-cost optocoupler-based isolator system for iot-based voltage measurement in low and high voltage dc applications\allowbreak[J].
+\newblock African Scientific Reports, 2023: 83-83.
 
 \bibitem[Megalingam et~al.(2021)Megalingam, Prithvi, Kumar, and Egumadiri]{megalingam2021drone}
 MEGALINGAM R~K, PRITHVI D~V, KUMAR N~C~S, et~al.
