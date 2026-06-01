@@ -3,37 +3,40 @@
 % 中英文摘要和关键字
 
 \begin{abstract}
-  论文的摘要是对论文研究内容和成果的高度概括。
-  摘要应对论文所研究的问题及其研究目的进行描述，对研究方法和过程进行简单介绍，对研究成果和所得结论进行概括。
-  摘要应具有独立性和自明性，其内容应包含与论文全文同等量的主要信息。
-  使读者即使不阅读全文，通过摘要就能了解论文的总体内容和主要成果。
+微型无人机因尺寸小、机动性高、部署灵活，在灾害探测、环境监测、基础设施巡检及狭小空间自主作业等领域具有广阔应用前景。然而，现有研究普遍面临系统载荷受限、接触鲁棒性不足、自主接近困难及控制稳定性依赖高精度感知等挑战，本文围绕结构设计、视觉感知、控制系统构建与安全验证，提出了一套面向复杂环境自主附着的轻量化无人机栖息系统。
 
-  论文摘要的书写应力求精确、简明。
-  切忌写成对论文书写内容进行提要的形式，尤其要避免“第 1 章……；第 2 章……；……”这种或类似的陈述方式。
+在结构设计方面，本文设计了一种面向微型无人机的柔性黏附栖息系统，通过轻量化结构设计与重心布局优化，完成机体底座、柔性附着执行机构及支撑结构的系统集成，并引入电流变液柔性器件实现可变形附着动作，验证了系统在有限载荷条件下稳定附着的可行性。
 
-  关键词是为了文献标引工作、用以表示全文主要内容信息的单词或术语。
-  关键词不超过 5 个，每个关键词中间用分号分隔。
+在视觉感知方面，本文构建了基于 AprilTag 的视觉伺服系统，建立涵盖相机标定、畸变矫正与位姿求解的完整感知管线，实现目标相对位置与深度的在线估计。基于单目投影几何模型分析了各自由度方向的可观测性差异，从观测 Jacobian 条件数退化角度阐释了深度估计敏感性与尺度恢复困难的内在机理。
+
+在控制系统方面，本文提出视觉外环与姿态内环相结合的多速率串级控制架构。底层双层 PID 串级控制器实现姿态角与角速度稳定跟踪，上层视觉伺服控制器生成导航参考指令引导自主接近与附着。利用 Hurwitz 判据与 Lyapunov 方法严格证明了姿态控制器的局部渐近稳定性，并通过等效误差动力学模型验证了视觉慢环控制器的闭环稳定性。
+
+在系统验证方面，本文基于 MuJoCo 构建了集成无人机动力学、视觉感知与控制器的仿真平台，完成从起飞、视觉对准、逐步接近到最终附着的全流程验证；并进一步搭建实体实验平台完成实机验证。实验结果与仿真趋势高度吻合，系统在真实传感器噪声、执行器延迟及环境扰动条件下均能稳定完成目标任务，验证了所提方法的实际适用性与可靠性。
+
+本文从结构设计、视觉感知、控制建模，到系统验证各个环节，形成了一套完整的研究闭环，为微型无人机复杂环境长时间自主驻留与受限感知条件下飞行机器人自主附着研究提供了理论基础与工程参考。
+
 
   % 关键词用“英文逗号”分隔，输出时会自动处理为正确的分隔符
   \thusetup{
-    keywords = {关键词 1, 关键词 2, 关键词 3, 关键词 4, 关键词 5},
+    keywords = {无人机栖息, 电流变液黏附, 视觉伺服, 串级控制, MuJoCo 仿真},
   }
 \end{abstract}
 
 \begin{abstract*}
-  An abstract of a dissertation is a summary and extraction of research work and contributions.
-  Included in an abstract should be description of research topic and research objective, brief introduction to methodology and research process, and summary of conclusion and contributions of the research.
-  An abstract should be characterized by independence and clarity and carry identical information with the dissertation.
-  It should be such that the general idea and major contributions of the dissertation are conveyed without reading the dissertation.
+Miniature unmanned aerial vehicles (UAVs), characterized by compact size, high maneuverability, and flexible deployment, hold broad application potential in disaster detection, environmental monitoring, infrastructure inspection, and autonomous operations in confined spaces. However, constrained by vehicle scale and energy density, they suffer from limited endurance and insufficient environmental interaction capability, making long-duration perching and continuous observation tasks difficult to sustain. Inspired by the surface perching behavior of natural flying creatures, non-flying-state attachment is recognized as a promising approach to overcoming the endurance bottleneck of miniature UAVs. Nevertheless, existing research generally faces challenges of limited payload capacity, insufficient contact robustness, difficulty in autonomous approach under complex environments, and reliance on high-precision sensing for control stability. To address these challenges, this thesis investigates structural design, visual perception, control system construction, and safety verification, proposing a lightweight UAV perching system for autonomous attachment in complex environments.
 
-  An abstract should be concise and to the point.
-  It is a misunderstanding to make an abstract an outline of the dissertation and words “the first chapter”, “the second chapter” and the like should be avoided in the abstract.
+In terms of structural design, a flexible adhesive perching system for miniature UAVs is developed. Through lightweight structural design and center-of-gravity optimization, the system integrates a vehicle base, flexible attachment actuators, and supporting structures, with electrorheological fluid (ERF)-based flexible devices enabling compliant deformable attachment under constrained payload conditions.
 
-  Keywords are terms used in a dissertation for indexing, reflecting core information of the dissertation.
-  An abstract may contain a maximum of 5 keywords, with semi-colons used in between to separate one another.
+In terms of visual perception, a visual servoing system based on AprilTag is constructed, establishing a complete perception pipeline covering camera calibration, distortion correction, and pose estimation for online target position and depth estimation. Based on a monocular projective geometry model, observability differences across degrees of freedom are analyzed, and the intrinsic mechanism underlying depth estimation sensitivity and scale recovery difficulty is explained from the perspective of observation Jacobian condition number degradation.
+
+In terms of control system design, a multi-rate cascaded control architecture combining a visual outer loop with an attitude inner loop is proposed. The inner-loop dual-layer PID cascade controller achieves stable tracking of attitude angles and angular rates, while the outer-loop visual servoing controller generates navigation commands to guide autonomous approach and attachment. Local asymptotic stability of the attitude controller is rigorously proven using the Hurwitz criterion and Lyapunov methods, and closed-loop stability of the visual slow-loop controller is verified through an equivalent error dynamics model.
+
+In terms of system validation, a simulation platform integrating UAV dynamics, visual perception, and controllers is built in MuJoCo, enabling full mission-chain verification from takeoff, visual alignment, and gradual approach to final attachment. A physical UAV experimental platform is further constructed for hardware validation. Experimental results align closely with simulation trends, confirming that the system reliably completes target tasks under real sensor noise, actuator delay, and environmental disturbances, validating the practical applicability and reliability of the proposed methods.
+
+This thesis establishes a complete technical pipeline spanning structural design, visual perception, control modeling, and system validation, providing theoretical foundations and engineering references for long-duration autonomous UAV perching in complex environments and autonomous attachment of aerial robots under limited sensing conditions.
 
   % Use comma as separator when inputting
   \thusetup{
-    keywords* = {keyword 1, keyword 2, keyword 3, keyword 4, keyword 5},
+    keywords* = {UAV perching, electrorheological fluid adhesion, visual servoing, cascaded control, MuJoCo simulation},
   }
 \end{abstract*}

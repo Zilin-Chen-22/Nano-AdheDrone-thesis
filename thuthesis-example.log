@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  30 MAY 2026 10:34
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  1 JUN 2026 13:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1235,17 +1235,17 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 ] (./data/abstract.tex [1
 
 
-]) [2
+] [2
 
 
-] (./thuthesis-example.toc [3
+]) [3] (./thuthesis-example.toc [4
 
 
 ])
 \tf@toc=\write5
 \openout5 = `thuthesis-example.toc'.
 
- [4] (./thuthesis-example.lof
+ [5] (./thuthesis-example.lof
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 12.04628pt on input line 3.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -1262,25 +1262,26 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 \tf@lof=\write6
 \openout6 = `thuthesis-example.lof'.
 
- [5
+ [6
 
 
-] [6] (./thuthesis-example.lot)
+] [7] (./thuthesis-example.lot)
 \tf@lot=\write7
 \openout7 = `thuthesis-example.lot'.
 
- (./data/denotation.tex [7
+ (./data/denotation.tex [8
 
 
-]) [8
+]) [9
 
+
+] [10
 
 ] (./data/chap01.tex
 第1章
 File: figures/kinds_of_UAV.png Graphic file (type bmp)
 <figures/kinds_of_UAV.png>
 [1
-
 
 ]
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 26.
@@ -1383,28 +1384,16 @@ Underfull \hbox (badness 4328) in paragraph at lines 229--230
 File: figures/vision_controller.png Graphic file (type bmp)
 <figures/vision_controller.png>
  [9] [10]
-
-Package natbib Warning: Citation `koenig2004design' on page 11 undefined on input line 308.
-
-
-Package natbib Warning: Citation `zhou2024towards' on page 11 undefined on input line 308.
-
-
-Package natbib Warning: Citation `zakka2025mujoco' on page 11 undefined on input line 308.
-
 File: figures/gazebo.png Graphic file (type bmp)
 <figures/gazebo.png>
 File: figures/issac_sim.jpg Graphic file (type bmp)
 <figures/issac_sim.jpg>
 File: figures/mujoco.png Graphic file (type bmp)
 <figures/mujoco.png>
-[11] [12] [13] [14] [15]
+ [11] [12] [13] [14] [15]
 File: figures/target.png Graphic file (type bmp)
 <figures/target.png>
- [16]
-File: figures/timeline.png Graphic file (type bmp)
-<figures/timeline.png>
-) (./data/chap02.tex [17]
+ [16]) (./data/chap02.tex [17]
 第2章
 [18
 
@@ -1610,33 +1599,36 @@ File: figures/hand_stick_01.png Graphic file (type bmp)
 <figures/hand_stick_01.png>
 File: figures/hand_stick_02.png Graphic file (type bmp)
 <figures/hand_stick_02.png>
-) (./data/chap05.tex [54]
+ [54]
+File: figures/demo_01.png Graphic file (type bmp)
+<figures/demo_01.png>
+ [55]) (./data/chap05.tex [56]
 第5章
-[55
+[57
 
-] [56])
+] [58])
 \openout3 = `bu.aux'.
 
- (./thuthesis-example.bbl [57]
+ (./thuthesis-example.bbl [59]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 24.
+(Font)              scaled to size 7.00075pt on input line 29.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 24.
+(Font)              scaled to size 5.00053pt on input line 29.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 24.
+(Font)              scaled to size 6.99925pt on input line 29.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 24.
- [58
+(Font)              scaled to size 4.99947pt on input line 29.
+ [60
 
 
-] [59]) (./data/appendix.tex (./bu.aux) [60]
+] [61]) (./data/appendix.tex (./bu.aux) [62]
 附录 A
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 6.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 9.55533pt on input line 6.
-[61
+[63
 
-] [62] [63]) [64] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [65
+] [64] [65]) [66] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [67
 
 
 
@@ -1655,10 +1647,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-
-Package natbib Warning: There were undefined citations.
-
-(./bu.aux) [66
+(./bu.aux) [68
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1667,15 +1656,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `thuthesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 1022071E140830CB6C5E2E2EE74A8777;10902.
+(rerunfilecheck)             Checksum: FCCAC3E35A8807EA24E697DF8BB3D193;10735.
  ) 
 Here is how much of TeX's memory you used:
- 34073 strings out of 476676
- 739307 string characters out of 5799435
- 2127842 words of memory out of 5000000
- 55473 multiletter control sequences out of 15000+600000
+ 34049 strings out of 476676
+ 735807 string characters out of 5799435
+ 2128842 words of memory out of 5000000
+ 55449 multiletter control sequences out of 15000+600000
  566809 words of font info for 201 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
  106i,14n,130p,1433b,4065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (78 pages).
+Output written on thuthesis-example.pdf (82 pages).

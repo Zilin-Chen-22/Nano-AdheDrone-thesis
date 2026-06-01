@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -17,12 +17,22 @@ NONAMI K.
 2025 IEEE International Conference on Mechatronics (ICM).
 \newblock IEEE, 2025: 1-6.
 
+\bibitem[Benarbia et~al.(2021)Benarbia and Kyamakya]{benarbia2021literature}
+BENARBIA T, KYAMAKYA K.
+\newblock A literature review of drone-based package delivery logistics systems and their implementation feasibility\allowbreak[J].
+\newblock Sustainability, 2021, 14\allowbreak (1): 360.
+
 \bibitem[Colomina et~al.(2014)Colomina and Molina]{COLOMINA201479}
 COLOMINA I, MOLINA P.
 \newblock Unmanned aerial systems for photogrammetry and remote sensing: A review\allowbreak[J/OL].
 \newblock ISPRS Journal of Photogrammetry and Remote Sensing, 2014, 92: 79-97.
 \newblock \url{https://www.sciencedirect.com/science/article/pii/S0924271614000501}.
 \newblock DOI: \doi{https://doi.org/10.1016/j.isprsjprs.2014.02.013}.
+
+\bibitem[Ahirwar et~al.(2019)Ahirwar, Swarnkar, Bhukya, and Namwade]{ahirwar2019application}
+AHIRWAR S, SWARNKAR R, BHUKYA S, et~al.
+\newblock Application of drone in agriculture\allowbreak[J].
+\newblock International Journal of Current Microbiology and Applied Sciences, 2019, 8\allowbreak (01): 2500-2505.
 
 \bibitem[Kim et~al.(2018)Kim, Lim, and Cho]{kim2018drone}
 KIM S~J, LIM G~J, CHO J.
@@ -33,6 +43,11 @@ KIM S~J, LIM G~J, CHO J.
 BEIGI P, RAJABI M~S, AGHAKHANI S.
 \newblock An overview of drone energy consumption factors and models\allowbreak[J].
 \newblock Handbook of smart energy systems, 2022: 1-20.
+
+\bibitem[Cabuk et~al.(2024)Cabuk, Tosun, Dagdeviren, and Ozturk]{cabuk2024modeling}
+CABUK U~C, TOSUN M, DAGDEVIREN O, et~al.
+\newblock Modeling energy consumption of small drones for swarm missions\allowbreak[J].
+\newblock IEEE Transactions on Intelligent Transportation Systems, 2024, 25\allowbreak (8): 10176-10189.
 
 \bibitem[Schmidt(2016)]{schmidt2016stability}
 SCHMIDT D~K.
@@ -64,6 +79,26 @@ W{\"U}EST V, JEGER S, FEROSKHAN M, et~al.
 MOHSAN S~A~H, KHAN M~A, NOOR F, et~al.
 \newblock Towards the unmanned aerial vehicles (uavs): A comprehensive review\allowbreak[J].
 \newblock Drones, 2022, 6\allowbreak (6): 147.
+
+\bibitem[Kovac(2016)]{kovac2016learning}
+KOVAC M.
+\newblock Learning from nature how to land aerial robots\allowbreak[J].
+\newblock Science, 2016, 352\allowbreak (6288): 895-896.
+
+\bibitem[Roderick et~al.(2017)Roderick, Cutkosky, and Lentink]{roderick2017touchdown}
+RODERICK W~R, CUTKOSKY M~R, LENTINK D.
+\newblock Touchdown to take-off: at the interface of flight and surface locomotion\allowbreak[J].
+\newblock Interface focus, 2017, 7\allowbreak (1).
+
+\bibitem[Zheng et~al.(2023)Zheng, Xiao, Nguyen, Farinha, and Kovac]{zheng2023metamorphic}
+ZHENG P, XIAO F, NGUYEN P~H, et~al.
+\newblock Metamorphic aerial robot capable of mid-air shape morphing for rapid perching\allowbreak[J].
+\newblock Scientific Reports, 2023, 13\allowbreak (1): 1297.
+
+\bibitem[Hsiao et~al.(2022)Hsiao, Sun, Zhang, and Zhao]{hsiao2022mechanically}
+HSIAO H, SUN J, ZHANG H, et~al.
+\newblock A mechanically intelligent and passive gripper for aerial perching and grasping\allowbreak[J].
+\newblock IEEE/ASME Transactions on Mechatronics, 2022, 27\allowbreak (6): 5243-5253.
 
 \bibitem[Hang et~al.(2019)Hang, Lyu, Song, Stork, Dollar, Kragic, and Zhang]{hang2019perching}
 HANG K, LYU X, SONG H, et~al.
@@ -165,11 +200,22 @@ XIA K, LI X, LI K, et~al.
 \newblock Cooperative tracking of quadrotor uavs using parallel optimal learning control\allowbreak[J].
 \newblock IEEE Transactions on Automation Science and Engineering, 2024, 22: 3308-3319.
 
-\bibitem[Joseph et~al.(2024)Joseph, Gunturu, Shrote, and Sandosh]{joseph2024autonomous}
-JOSEPH B~S, GUNTURU S, SHROTE S, et~al.
-\newblock Autonomous docking for underwater drones using aruco marker based localization\allowbreak[C]//\allowbreak
-2024 4th International Conference on Robotics, Automation and Artificial Intelligence (RAAI).
-\newblock IEEE, 2024: 207-212.
+\bibitem[Koenig et~al.(2004)Koenig and Howard]{koenig2004design}
+KOENIG N, HOWARD A.
+\newblock Design and use paradigms for gazebo, an open-source multi-robot simulator\allowbreak[C]//\allowbreak
+2004 IEEE/RSJ international conference on intelligent robots and systems (IROS)(IEEE Cat. No. 04CH37566): Vol.~3.
+\newblock Ieee, 2004: 2149-2154.
+
+\bibitem[Zhou et~al.(2024)Zhou, Song, Xie, Shu, Ma, Liu, Yin, and See]{zhou2024towards}
+ZHOU Z, SONG J, XIE X, et~al.
+\newblock Towards building ai-cps with nvidia isaac sim: An industrial benchmark and case study for robotics manipulation\allowbreak[C]//\allowbreak
+Proceedings of the 46th international conference on software engineering: software engineering in practice.
+\newblock 2024: 263-274.
+
+\bibitem[Zakka et~al.(2025)Zakka, Tabanpour, Liao, Haiderbhai, Holt, Luo, Allshire, Frey, Sreenath, Kahrs, et~al.]{zakka2025mujoco}
+ZAKKA K, TABANPOUR B, LIAO Q, et~al.
+\newblock Mujoco playground\allowbreak[A].
+\newblock 2025.
 
 \bibitem[Todorov et~al.(2012)Todorov, Erez, and Tassa]{todorov2012mujoco}
 TODOROV E, EREZ T, TASSA Y.
@@ -177,6 +223,32 @@ TODOROV E, EREZ T, TASSA Y.
 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems.
 \newblock IEEE, 2012: 5026-5033.
 \newblock DOI: \doi{10.1109/IROS.2012.6386109}.
+
+\bibitem[Adams et~al.(2000)Adams and Nosonovsky]{adams2000contact}
+ADAMS G, NOSONOVSKY M.
+\newblock Contact modeling—forces\allowbreak[J].
+\newblock Tribology international, 2000, 33\allowbreak (5-6): 431-442.
+
+\bibitem[Joseph et~al.(2024)Joseph, Gunturu, Shrote, and Sandosh]{joseph2024autonomous}
+JOSEPH B~S, GUNTURU S, SHROTE S, et~al.
+\newblock Autonomous docking for underwater drones using aruco marker based localization\allowbreak[C]//\allowbreak
+2024 4th International Conference on Robotics, Automation and Artificial Intelligence (RAAI).
+\newblock IEEE, 2024: 207-212.
+
+\bibitem[Huang et~al.(2023)Huang and Lin]{huang2023indoor}
+HUANG Y~H, LIN C~T.
+\newblock Indoor localization method for a mobile robot using lidar and a dual apriltag\allowbreak[J].
+\newblock Electronics, 2023, 12\allowbreak (4): 1023.
+
+\bibitem[McGuire et~al.(2017)McGuire, De~Croon, De~Wagter, Tuyls, and Kappen]{mcguire2017efficient}
+MCGUIRE K, DE~CROON G, DE~WAGTER C, et~al.
+\newblock Efficient optical flow and stereo vision for velocity estimation and obstacle avoidance on an autonomous pocket drone\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2017, 2\allowbreak (2): 1070-1076.
+
+\bibitem[Monteiro et~al.(2017)Monteiro and C~Mart{\'\i}]{monteiro2017using}
+MONTEIRO M, C~MART{\'I} A.
+\newblock Using smartphone pressure sensors to measure vertical velocities of elevators, stairways, and drones\allowbreak[J].
+\newblock Physics Education, 2017, 52\allowbreak (1): 015010.
 
 \bibitem[Tan et~al.(2025)Tan, Li, and Zhao]{tan2025center}
 TAN Y~H, LI W, ZHAO H.
@@ -193,6 +265,17 @@ TAN Y~H, LI W, ZHAO H.
 AGUNLOYE A~O.
 \newblock A low-cost optocoupler-based isolator system for iot-based voltage measurement in low and high voltage dc applications\allowbreak[J].
 \newblock African Scientific Reports, 2023: 83-83.
+
+\bibitem[Van~Rossum et~al.(1995)Van~Rossum and Drake~Jr]{van1995python}
+VAN~ROSSUM G, DRAKE~JR F~L.
+\newblock Python tutorial: Vol. 620\allowbreak[M].
+\newblock Centrum voor Wiskunde en Informatica Amsterdam, The Netherlands, 1995.
+
+\bibitem[Peng et~al.(2006)Peng, Huafeng, Dilin, and Chuanshan]{peng2006elrs}
+PENG H, HUAFENG W, DILIN M, et~al.
+\newblock Elrs: an energy-efficient layered routing scheme for wireless sensor and actor networks\allowbreak[C]//\allowbreak
+20th International Conference on Advanced Information Networking and Applications-Volume 1 (AINA'06): Vol.~2.
+\newblock IEEE, 2006: 5-pp.
 
 \bibitem[Megalingam et~al.(2021)Megalingam, Prithvi, Kumar, and Egumadiri]{megalingam2021drone}
 MEGALINGAM R~K, PRITHVI D~V, KUMAR N~C~S, et~al.

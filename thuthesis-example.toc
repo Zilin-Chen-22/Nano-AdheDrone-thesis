@@ -13,7 +13,6 @@
 \contentsline {section}{\numberline {1.3}研究内容和研究工作计划}{15}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}研究目标}{15}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}研究思路}{16}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}工作进度计划}{17}{subsection.1.3.3}%
 \contentsline {chapter}{\numberline {第2章}无人机及栖息装置系统设计}{18}{chapter.2}%
 \contentsline {section}{\numberline {2.1}无人机系统设计}{18}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}无人机设计原则及挑战}{18}{subsection.2.1.1}%
@@ -43,7 +42,7 @@
 \contentsline {subsubsection}{\numberline {3.3.2.1}姿态控制器稳定性分析}{41}{subsubsection.3.3.2.1}%
 \contentsline {subsection}{\numberline {3.3.3}无人机视觉伺服控制器}{44}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}本章小结}{46}{section.3.4}%
-\contentsline {chapter}{\numberline {第4章}栖息无人机的控制实验与讨论}{48}{chapter.4}%
+\contentsline {chapter}{\numberline {第4章}栖息无人机的控制实验}{48}{chapter.4}%
 \contentsline {section}{\numberline {4.1}实验平台硬件环境搭建}{48}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}栖息场景搭建}{48}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}无人机及地面站系统硬件搭建}{49}{subsection.4.1.2}%
@@ -52,14 +51,14 @@
 \contentsline {subsection}{\numberline {4.2.2}实机测试结果}{52}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}VSERF器件验证}{54}{section.4.3}%
 \contentsline {section}{\numberline {4.4}无人机栖息实验}{54}{section.4.4}%
-\contentsline {section}{\numberline {4.5}本章小结}{54}{section.4.5}%
-\contentsline {chapter}{\numberline {第5章}总结与展望}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}主要工作及结论}{55}{section.5.1}%
-\contentsline {section}{\numberline {5.2}研究展望}{56}{section.5.2}%
-\contentsline {chapter}{参考文献}{58}{section*.54}%
+\contentsline {section}{\numberline {4.5}本章小结}{55}{section.4.5}%
+\contentsline {chapter}{\numberline {第5章}总结与展望}{57}{chapter.5}%
+\contentsline {section}{\numberline {5.1}主要工作及结论}{57}{section.5.1}%
+\contentsline {section}{\numberline {5.2}研究展望}{58}{section.5.2}%
+\contentsline {chapter}{参考文献}{60}{section*.54}%
 \setcounter {tocdepth}{0}
-\contentsline {chapter}{\numberline {附录 A}本文编写的核心程序代码}{61}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 A}本文编写的核心程序代码}{63}{appendix.A}%
 \setcounter {tocdepth}{0}
-\contentsline {chapter}{致谢}{65}{section*.56}%
-\contentsline {chapter}{声明}{66}{section*.58}%
+\contentsline {chapter}{致谢}{67}{section*.56}%
+\contentsline {chapter}{声明}{68}{section*.58}%
 \contentsfinish 
