@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  1 JUN 2026 13:25
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.6)  1 JUN 2026 14:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1628,11 +1628,11 @@ LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
 (Font)              scaled to size 9.55533pt on input line 6.
 [63
 
-] [64] [65]) [66] (./data/acknowledgements.tex (./bu.aux)) (./bu.aux) [67
+] [64] [65]) [66] (./data/acknowledgements.tex (./bu.aux) [67
 
 
 
-]
+]) (./bu.aux) [68]
 Underfull \hbox (badness 10000) in paragraph at lines 77--77
 []\TU/SimSun(0)/m/n/12.045 本 人 郑 重 声 明：|  所 呈 交 的 综 合 论 文 训 练 论 文，|  是 本 人 在 导 师 指 导 下，|  独 立 进
  []
@@ -1647,7 +1647,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 \TU/SimSun(0)/m/n/12.045 研 究 成 果 不 包 含 任 何 他 人 享 有 著 作 权 的 内 容。|  对 本 论 文 所 涉 及 的 研 究 工 作 做 出 贡
  []
 
-(./bu.aux) [68
+(./bu.aux) [69
 
 
 ] (./thuthesis-example.aux (./bu.aux))
@@ -1667,4 +1667,4 @@ Here is how much of TeX's memory you used:
  37 hyphenation exceptions out of 8191
  106i,14n,130p,1433b,4065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thuthesis-example.pdf (82 pages).
+Output written on thuthesis-example.pdf (83 pages).

@@ -60,5 +60,5 @@
 \contentsline {chapter}{\numberline {附录 A}本文编写的核心程序代码}{63}{appendix.A}%
 \setcounter {tocdepth}{0}
 \contentsline {chapter}{致谢}{67}{section*.56}%
-\contentsline {chapter}{声明}{68}{section*.58}%
+\contentsline {chapter}{声明}{69}{section*.58}%
 \contentsfinish 
